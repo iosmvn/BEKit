@@ -261,7 +261,7 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         UUID = [defaults stringForKey:BFUniqueIdentifierDefaultsKey];
         if (!UUID) {
-            UUID = [NSString generateUUID];
+            UUID = [NSString be_generateUUID];
             [defaults setObject:UUID forKey:BFUniqueIdentifierDefaultsKey];
             [defaults synchronize];
         }
@@ -274,12 +274,12 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     BOOL isValid = false, hasToUpdate = false;
     
     if ([uniqueIdentifier isKindOfClass:[NSData class]]) {
-        userUUID = [(NSData *)uniqueIdentifier convertUUIDToString];
+        userUUID = [(NSData *)uniqueIdentifier be_convertUUIDToString];
     } else if ([uniqueIdentifier isKindOfClass:[NSString class]]) {
-        userUUID = [(NSString *)uniqueIdentifier convertToAPNSUUID];
+        userUUID = [(NSString *)uniqueIdentifier be_convertToAPNSUUID];
     }
     
-    isValid = [userUUID isUUIDForAPNS];
+    isValid = [userUUID be_isUUIDForAPNS];
     
     if (isValid) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

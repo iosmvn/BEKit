@@ -16,4 +16,6 @@
 - (NSString * _Nonnull)be_convertToASCIIString;
 + (NSString * _Nonnull)be_convertToASCIIString:(NSData * _Nonnull)data;
 
+- (NSString * _Nullable)be_convertUUIDToString;
+
 @end

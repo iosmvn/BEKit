@@ -26,4 +26,8 @@
     return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 }
 
+- (NSString * _Nullable)be_convertUUIDToString {
+    return [[[self description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 @end

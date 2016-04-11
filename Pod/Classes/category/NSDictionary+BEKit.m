@@ -14,7 +14,7 @@
     return [NSDictionary be_dictionaryToJSON:self];
 }
 
-+ (NSString * _Nonnull)be_arrayToJSON:(NSDictionary * _Nonnull)dictionary {
++ (NSString * _Nonnull)be_dictionaryToJSON:(NSDictionary * _Nonnull)dictionary {
     NSString *json = nil;
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];

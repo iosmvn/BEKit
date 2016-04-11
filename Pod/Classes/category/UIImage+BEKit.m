@@ -10,7 +10,6 @@
 #import "NSNumber+BEKit.h"
 #import "UIColor+BEKit.h"
 #import "UIDevice+BEKit.h"
-#import "BFLog.h"
 
 @implementation UIImage (BEKit)
 
@@ -181,7 +180,7 @@
     UIGraphicsEndImageContext();
     
     if (newImage == nil) {
-        BFLog(@"Could not scale image");
+        NSLog(@"Could not scale image");
     }
     
     return newImage;
@@ -275,7 +274,7 @@
     UIGraphicsEndImageContext();
     
     if (newImage == nil) {
-        BFLog(@"Could not scale image");
+        NSLog(@"Could not scale image");
     }
     
     return newImage;
@@ -307,7 +306,7 @@
     UIGraphicsEndImageContext();
     
     if (newImage == nil) {
-        BFLog(@"Could not scale image");
+        NSLog(@"Could not scale image");
     }
     
     return newImage;
@@ -315,12 +314,12 @@
 
 
 - (UIImage * _Nonnull)imageRotatedByRadians:(CGFloat)radians {
-    return [self imageRotatedByDegrees:RadiansToDegrees(radians)];
+    return [self imageRotatedByDegrees:BE_RadiansToDegrees(radians)];
 }
 
 - (UIImage * _Nonnull)imageRotatedByDegrees:(CGFloat)degrees {
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
-    CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
+    CGAffineTransform t = CGAffineTransformMakeRotation(BE_DegreesToRadians(degrees));
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;
     
@@ -329,7 +328,7 @@
     
     CGContextTranslateCTM(bitmap, rotatedSize.width / 2, rotatedSize.height / 2);
     
-    CGContextRotateCTM(bitmap, DegreesToRadians(degrees));
+    CGContextRotateCTM(bitmap, BE_DegreesToRadians(degrees));
     
     CGContextScaleCTM(bitmap, 1.0, -1.0);
     CGContextDrawImage(bitmap, CGRectMake(-self.size.width / 2, -self.size.height / 2, self.size.width, self.size.height), [self CGImage]);
@@ -616,7 +615,7 @@
     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
     
     if (pixelBuffer == NULL) {
-        BFLog(@"No pixelbuffer");
+        NSLog(@"No pixelbuffer");
     }
     
     outBuffer.data = pixelBuffer;
@@ -627,7 +626,7 @@
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     
     if (error) {
-        BFLog(@"Error from convolution %ld", error);
+        NSLog(@"Error from convolution %ld", error);
     }
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();

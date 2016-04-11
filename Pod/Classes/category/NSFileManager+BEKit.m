@@ -218,16 +218,16 @@
     
     switch (origin) {
         case DirectoryTypeMainBundle:
-            originPath = [self getBundlePathForFile:path];
+            originPath = [self be_getBundlePathForFile:path];
             break;
         case DirectoryTypeLibrary:
-            originPath = [self getDocumentsDirectoryForFile:path];
+            originPath = [self be_getDocumentsDirectoryForFile:path];
             break;
         case DirectoryTypeDocuments:
-            originPath = [self getLibraryDirectoryForFile:path];
+            originPath = [self be_getLibraryDirectoryForFile:path];
             break;
         case DirectoryTypeCache:
-            originPath = [self getCacheDirectoryForFile:path];
+            originPath = [self be_getCacheDirectoryForFile:path];
             break;
     }
     
@@ -275,11 +275,11 @@
 }
 
 + (id _Nullable)be_getAppSettingsForObjectWithKey:(NSString * _Nonnull)objKey {
-    return [self be_getSettings:APP_NAME objectForKey:objKey];
+    return [self be_getSettings:BE_APP_NAME objectForKey:objKey];
 }
 
 + (BOOL)be_setAppSettingsForObject:(id _Nonnull)value forKey:(NSString * _Nonnull)objKey {
-    return [self be_setSettings:APP_NAME object:value forKey:objKey];
+    return [self be_setSettings:BE_APP_NAME object:value forKey:objKey];
 }
 
 @end

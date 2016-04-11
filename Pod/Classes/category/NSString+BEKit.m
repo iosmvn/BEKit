@@ -72,15 +72,15 @@
 	return [BECryptographyUtil be_MD5:self];
 }
 
-- (NSString * _Nullable)SHA1 {
+- (NSString * _Nullable)be_SHA1 {
     return [BECryptographyUtil be_SHA1:self];
 }
 
-- (NSString * _Nullable)SHA256 {
+- (NSString * _Nullable)be_SHA256 {
     return [BECryptographyUtil be_SHA256:self];
 }
 
-- (NSString * _Nullable)SHA512 {
+- (NSString * _Nullable)be_SHA512 {
     return [BECryptographyUtil be_SHA512:self];
 }
 

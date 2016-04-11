@@ -8,7 +8,6 @@
 
 #import "UIFont+BEKit.h"
 #import "NSMutableArray+BEKit.h"
-#import "BFLog.h"
 
 @implementation UIFont (BEKit)
 
@@ -42,7 +41,7 @@ static UIFont * _Nullable boldFont;
 
 + (NSDictionary * _Nonnull)allFamilyAndFonts {
     NSMutableArray *fontFamilies = (NSMutableArray *)[UIFont familyNames];
-    fontFamilies = [NSMutableArray sortArrayByKey:@"" array:fontFamilies ascending:YES];
+    fontFamilies = [NSMutableArray be_sortArrayByKey:@"" array:fontFamilies ascending:YES];
     
     NSMutableDictionary *fontFamilyDic = [[NSMutableDictionary alloc] init];
     
@@ -52,7 +51,7 @@ static UIFont * _Nullable boldFont;
         [fontFamilyDic setObject:fontNames forKey:fontFamily];
     }
     
-    BFLog(@"%@", fontFamilyDic);
+    NSLog(@"%@", fontFamilyDic);
     
     return fontFamilyDic;
 }
@@ -291,7 +290,7 @@ static UIFont * _Nullable boldFont;
             break;
     }
     
-    BFLog(@"%@", fontNames);
+    NSLog(@"%@", fontNames);
     
     return fontNames;
 }
