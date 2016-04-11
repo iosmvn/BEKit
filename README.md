@@ -1,5 +1,7 @@
-# 说明
+# 概述
 BEKit是基础扩展工具包（Base Extended Kit）核心代码.
+
+## 说明
 BEKit（Base Extended Kit）是一些基础功能代码、工具类、基类的集合，旨在快速实现基础功能。（持续更新构建中……）
 
 # BEKit
