@@ -10,7 +10,7 @@
 
 @implementation UIToolbar (BEKit)
 
-- (void)setTransparent:(BOOL)transparent {
+- (void)be_setTransparent:(BOOL)transparent {
     if (transparent) {
         [self setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         [self setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];

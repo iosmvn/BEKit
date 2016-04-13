@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BEKit_Tests/BEKit.framework"
+  install_framework "Pods-BEKit_Tests/SDWebImage.framework"
   install_framework "Pods-BEKit_Tests/Expecta.framework"
   install_framework "Pods-BEKit_Tests/Expecta_Snapshots.framework"
   install_framework "Pods-BEKit_Tests/FBSnapshotTestCase.framework"
@@ -92,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BEKit_Tests/BEKit.framework"
+  install_framework "Pods-BEKit_Tests/SDWebImage.framework"
   install_framework "Pods-BEKit_Tests/Expecta.framework"
   install_framework "Pods-BEKit_Tests/Expecta_Snapshots.framework"
   install_framework "Pods-BEKit_Tests/FBSnapshotTestCase.framework"

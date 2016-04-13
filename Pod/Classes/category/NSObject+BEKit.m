@@ -10,7 +10,7 @@
 
 @implementation NSObject (BEKit)
 
-- (BOOL)be_isValid {
+- (BOOL)be_isNULL {
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 

@@ -20,7 +20,6 @@
 
 //category
 #import "NSArray+BEKit.h"			
-#import "UIFont+BEKit.h"
 #import "NSData+BEKit.h"
 #import "UIImage+BEKit.h"
 #import "NSDate+BEKit.h"
@@ -31,7 +30,6 @@
 #import "UINavigationBar+BEKit.h"
 #import "NSMutableArray+BEKit.h"
 #import "UIScreen+BEKit.h"
-#import "NSMutableDictionary+BEKit.h"
 #import "UIScrollView+BEKit.h"
 #import "NSNumber+BEKit.h"
 #import "UITableView+BEKit.h"

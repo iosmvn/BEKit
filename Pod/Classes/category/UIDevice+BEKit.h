@@ -24,183 +24,80 @@
  */
 @interface UIDevice (BEKit)
 
-/**
- *  Get the iOS version string
- */
-#define IOS_VERSION [UIDevice currentDevice].systemVersion
+//系统版本号，比如：9.0
+#define BE_IOS_VERSION [UIDevice currentDevice].systemVersion
 
-/**
- *  Macros to compare system versions
- *
- *  @param v Version, like @"9.0"
- *
- *  @return Returns a BOOL
- */
-#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
-#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+//系统版本号比较
+#define BE_SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define BE_SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define BE_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define BE_SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define BE_SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
-/**
- *  Macros that returns if the iOS version is greater or equal to choosed one
- *
- *  @return Returns a BOOL
- */
 #define IS_IOS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 #define IS_IOS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IS_IOS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IS_IOS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IS_IOS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 
-/**
- *  Returns the device platform string
- *  Example: "iPhone7,2"
- *
- *  @return Returns the device platform string
- */
-+ (NSString * _Nonnull)devicePlatform;
-/**
- *  Returns the user-friendly device platform string
- *  Example: "iPad Air (Cellular)"
- *
- *  @return Returns the user-friendly device platform string
- */
-+ (NSString * _Nonnull)devicePlatformString;
+//设备平台，比如：iPhone7,2
++ (NSString * _Nonnull)be_devicePlatform;
 
-/**
- *  Check if the current device is an iPad
- *
- *  @return Returns YES if it's an iPad, NO if not
- */
-+ (BOOL)isiPad;
+//设备平台描述，比如：iPad Air (Cellular)
++ (NSString * _Nonnull)be_devicePlatformString;
 
-/**
- *  Check if the current device is an iPhone
- *
- *  @return Returns YES if it's an iPhone, NO if not
- */
-+ (BOOL)isiPhone;
++ (BOOL)be_isiPad;
++ (BOOL)be_isiPhone;
++ (BOOL)be_isiPod;
++ (BOOL)be_isAppleTV;
++ (BOOL)be_isAppleWatch;
++ (BOOL)be_isSimulator;
 
-/**
- *  Check if the current device is an iPod
- *
- *  @return Returns YES if it's an iPod, NO if not
- */
-+ (BOOL)isiPod;
+//iOS版本，比如：7
++ (NSInteger)be_iOSVersion;
 
-/**
- *  Check if the current device is an Apple TV
- *
- *  @return Returns YES if it's an Apple TV, NO if not
- */
-+ (BOOL)isAppleTV;
+//当前设备CPU频率
++ (NSUInteger)be_cpuFrequency;
 
-/**
- *  Check if the current device is an Apple Watch
- *
- *  @return Returns YES if it's an Apple Watch, NO if not
- */
-+ (BOOL)isAppleWatch;
+//当前设备总线频率
++ (NSUInteger)be_busFrequency;
 
-/**
- *  Check if the current device is the simulator
- *
- *  @return Returns YES if it's the simulator, NO if not
- */
-+ (BOOL)isSimulator;
-
-/**
- *  Check if the current device has a Retina display
- *
- *  @return Returns YES if it has a Retina display, NO if not
- */
-+ (BOOL)isRetina DEPRECATED_MSG_ATTRIBUTE("Use +isRetina in UIScreen class");
-
-/**
- *  Check if the current device has a Retina HD display
- *
- *  @return Returns YES if it has a Retina HD display, NO if not
- */
-+ (BOOL)isRetinaHD DEPRECATED_MSG_ATTRIBUTE("Use +isRetinaHD in UIScreen class");
-
-/**
- *  Returns the iOS version without the subversion
- *  Example: 7
- *
- *  @return Returns the iOS version
- */
-+ (NSInteger)iOSVersion;
-
-/**
- *  Returns the current device CPU frequency
- *
- *  @return Returns the current device CPU frequency
- */
-+ (NSUInteger)cpuFrequency;
-
-/**
- *  Returns the current device BUS frequency
- *
- *  @return Returns the current device BUS frequency
- */
-+ (NSUInteger)busFrequency;
-
-/**
- *  Returns the current device RAM size
- *
- *  @return Returns the current device RAM size
- */
-+ (NSUInteger)ramSize;
+//当前设备内存大小
++ (NSUInteger)be_ramSize;
 
 /**
  *  Returns the current device CPU number
  *
  *  @return Returns the current device CPU number
  */
-+ (NSUInteger)cpuNumber;
++ (NSUInteger)be_cpuNumber;
 
 /**
  *  Returns the current device total memory
  *
  *  @return Returns the current device total memory
  */
-+ (NSUInteger)totalMemory;
++ (NSUInteger)be_totalMemory;
 
 /**
  *  Returns the current device non-kernel memory
  *
  *  @return Returns the current device non-kernel memory
  */
-+ (NSUInteger)userMemory;
++ (NSUInteger)be_userMemory;
 
-/**
- *  Returns the current device total disk space
- *
- *  @return Returns the current device total disk space
- */
-+ (NSNumber * _Nonnull)totalDiskSpace;
+//当前设备总磁盘空间
++ (NSNumber * _Nonnull)be_totalDiskSpace;
 
-/**
- *  Returns the current device free disk space
- *
- *  @return Returns the current device free disk space
- */
-+ (NSNumber * _Nonnull)freeDiskSpace;
-
-/**
- *  Returns the current device MAC address
- *
- *  @return Returns the current device MAC address
- */
-+ (NSString * _Nonnull)macAddress DEPRECATED_MSG_ATTRIBUTE("In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00");
+//当前设备剩余磁盘空间
++ (NSNumber * _Nonnull)be_freeDiskSpace;
 
 /**
  *  Generate an unique identifier and store it into standardUserDefaults
  *
  *  @return Returns a unique identifier as a NSString
  */
-+ (NSString * _Nonnull)uniqueIdentifier;
++ (NSString * _Nonnull)be_uniqueIdentifier;
 
 /**
  *  Save the unique identifier or update it if there is and it is changed.
@@ -209,6 +106,6 @@
  *  @param uniqueIdentifier The unique identifier to save or update if needed. (Must be NSData or NSString)
  *  @param block            The execution block that know if the unique identifier is valid and has to be updated. You have to handle the case if it is valid and the update is needed or not
  */
-+ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block;
++ (void)be_updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block;
 
 @end

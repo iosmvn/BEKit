@@ -13,12 +13,12 @@
 #if __cplusplus
 extern "C" {
 #endif
-CGFloat BE_DegreesToRadians(CGFloat degrees) {
-    return degrees * M_PI / 180;
-};
-CGFloat BE_RadiansToDegrees(CGFloat radians) {
-    return radians * 180 / M_PI;
-};
+    CGFloat BE_DegreesToRadians(CGFloat degrees) {
+        return degrees * M_PI / 180;
+    };
+    CGFloat BE_RadiansToDegrees(CGFloat radians) {
+        return radians * 180 / M_PI;
+    };
 #if _cplusplus
 }
 #endif
@@ -33,18 +33,6 @@ CGFloat BE_RadiansToDegrees(CGFloat radians) {
 
 + (CGFloat)be_randomFloatBetweenMin:(CGFloat)minValue andMax:(CGFloat)maxValue {
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * (maxValue - minValue)) + minValue;
-}
-
-+ (NSInteger)be_nextPowerOfTwo:(NSInteger)number {
-    int result = 1;
-    while (result < number) {
-        result *= 2;
-    }
-    return result;
-}
-
-+ (BOOL)be_isPowerOfTwo:(NSInteger)number {
-    return ((number != 0) && !(number & (number - 1)));
 }
 
 @end

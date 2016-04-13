@@ -76,153 +76,54 @@ typedef NS_ENUM(NSInteger, UIViewLinearGradientDirection) {
     UIViewLinearGradientDirectionDiagonalFromRightToLeftAndDownToTop
 };
 
-/**
- *  This category adds some useful methods to UIView
- */
 @interface UIView (BEKit)
 
-/**
- *  Create an UIView with the given frame and background color
- *
- *  @param frame           UIView's frame
- *  @param backgroundColor UIView's background color
- */
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame
++ (instancetype _Nonnull)be_initWithFrame:(CGRect)frame
                    backgroundColor:(UIColor * _Nonnull)backgroundColor;
 
-/**
- *  Create a border around the UIView
- *
- *  @param color  Border's color
- *  @param radius Border's radius
- *  @param width  Border's width
- */
-- (void)createBordersWithColor:(UIColor * _Nonnull)color
+- (void)be_createBordersWithColor:(UIColor * _Nonnull)color
                 withCornerRadius:(CGFloat)radius
                         andWidth:(CGFloat)width;
 
-/**
- *  Remove the borders around the UIView
- */
-- (void)removeBorders;
+- (void)be_removeBorders;
 
-/**
- *  Create a shadow on the UIView
- *
- *  @param offset  Shadow's offset
- *  @param opacity Shadow's opacity
- *  @param radius  Shadow's radius
- */
-- (void)createRectShadowWithOffset:(CGSize)offset
+- (void)be_createRectShadowWithOffset:(CGSize)offset
                            opacity:(CGFloat)opacity
                             radius:(CGFloat)radius;
 
-/**
- *  Create a corner radius shadow on the UIView
- *
- *  @param cornerRadius Corner radius value
- *  @param offset       Shadow's offset
- *  @param opacity      Shadow's opacity
- *  @param radius       Shadow's radius
- */
-- (void)createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius
+- (void)be_createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius
                                           offset:(CGSize)offset
                                          opacity:(CGFloat)opacity
                                           radius:(CGFloat)radius;
 
-/**
- *  Remove the shadow around the UIView
- */
-- (void)removeShadow;
+- (void)be_removeShadow;
 
-/**
- *  Set the corner radius of UIView
- *
- *  @param radius Radius value
- */
-- (void)setCornerRadius:(CGFloat)radius;
+- (void)be_setCornerRadius:(CGFloat)radius;
 
-/**
- *  Create a linear gradient
- *
- *  @param colors    NSArray of UIColor instances
- *  @param direction Direction of the gradient
- */
-- (void)createGradientWithColors:(NSArray * _Nonnull)colors
+- (void)be_createGradientWithColors:(NSArray * _Nonnull)colors
                        direction:(UIViewLinearGradientDirection)direction;
 
-/**
- *  Create a shake effect on the UIView
- */
-- (void)shakeView;
+- (void)be_shakeView;
 
-/**
- *  Create a pulse effect on th UIView
- *
- *  @param duration Seconds of animation
- */
-- (void)pulseViewWithDuration:(CGFloat)duration;
+- (void)be_pulseViewWithDuration:(CGFloat)duration;
 
-/**
- *  Create a pulse effect on the UIView
- *
- *  @param seconds Seconds of animation
- */
-- (void)pulseViewWithTime:(CGFloat)seconds DEPRECATED_MSG_ATTRIBUTE("Use -pulseViewWithDuration:");
+- (void)be_heartbeatViewWithDuration:(CGFloat)duration;
 
-/**
- *  Create a heartbeat effect on the UIView
- *
- *  @param duration Seconds of animation
- */
-- (void)heartbeatViewWithDuration:(CGFloat)duration;
+- (void)be_applyMotionEffects;
 
-/**
- *  Adds a motion effect to the view
- */
-- (void)applyMotionEffects;
-
-/**
- *  Flip the view
- *
- *  @param duration  Seconds of animation
- *  @param direction Direction of the flip animation
- */
-- (void)flipWithDuration:(NSTimeInterval)duration
+- (void)be_flipWithDuration:(NSTimeInterval)duration
                direction:(UIViewAnimationFlipDirection)direction;
 
-/**
- *  Translate the UIView around the topView
- *
- *  @param topView       Top view to translate to
- *  @param duration      Duration of the translation
- *  @param direction     Direction of the translation
- *  @param repeat        If the animation must be repeat or no
- *  @param startFromEdge If the animation must start from the edge
- */
-- (void)translateAroundTheView:(UIView * _Nonnull)topView
+- (void)be_translateAroundTheView:(UIView * _Nonnull)topView
                         duration:(CGFloat)duration
                         direction:(UIViewAnimationTranslationDirection)direction
                             repeat:(BOOL)repeat
                     startFromEdge:(BOOL)startFromEdge;
 
-/**
- *  Take a screenshot of the current view
- *
- *  @return Returns screenshot as UIImage
- */
-- (UIImage * _Nonnull)screenshot;
+- (UIImage * _Nonnull)be_screenshot;
 
-/**
- *  Take a screenshot of the current view an saving to the saved photos album
- *
- *  @return Returns screenshot as UIImage
- */
-- (UIImage * _Nonnull)saveScreenshot;
+- (UIImage * _Nonnull)be_saveScreenshot;
 
-/**
- *  Removes all subviews from current view
- */
-- (void)removeAllSubviews;
+- (void)be_removeAllSubviews;
 
 @end

@@ -8,9 +8,6 @@
 
 @import Foundation;
 
-/**
- *  This category adds some useful methods to NSArray
- */
 @interface NSArray (BEKit)
 
 - (id _Nullable)be_objectAtIndex:(NSUInteger)index;

@@ -12,48 +12,21 @@
  *  The simplified date structure
  */
 struct BEDateInformation {
-    /**
-     *  Year
-     */
     NSInteger year;
-    /**
-     *  Month of the year
-     */
     NSInteger month;
-    /**
-     *  Day of the month
-     */
     NSInteger day;
     
-	
-    /**
-     *  Day of the week
-     */
 	NSInteger weekday;
 	
-    /**
-     *  Hour of the day
-     */
     NSInteger hour;
-    /**
-     *  Minute of the hour
-     */
     NSInteger minute;
-    /**
-     *  Second of the minute
-     */
 	NSInteger second;
-    /**
-     *  Nanosecond of the second
-     */
-    NSInteger nanosecond;
+    
+    NSInteger nanosecond;//毫秒
 	
 };
 typedef struct BEDateInformation BEDateInformation;
 
-/**
- *  This category adds some useful methods to NSDate
- */
 @interface NSDate (BEKit)
 
 /**

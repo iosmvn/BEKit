@@ -12,7 +12,6 @@
 
 - (BOOL)shouldAutorotate{
     return [self.visibleViewController shouldAutorotate];
-    
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
@@ -25,6 +24,18 @@
     } else {
         return UIInterfaceOrientationMaskPortrait;
     }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    //    return UIStatusBarStyleLightContent;
+    return self.topViewController.preferredStatusBarStyle;
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
 }
 
 @end

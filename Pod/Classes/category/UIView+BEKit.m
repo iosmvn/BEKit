@@ -10,14 +10,14 @@
 
 @implementation UIView (BEKit)
 
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame backgroundColor:(UIColor * _Nonnull)backgroundColor {
++ (instancetype _Nonnull)be_initWithFrame:(CGRect)frame backgroundColor:(UIColor * _Nonnull)backgroundColor {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     [view setBackgroundColor:backgroundColor];
     
     return view;
 }
 
-- (void)createBordersWithColor:(UIColor * _Nonnull)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
+- (void)be_createBordersWithColor:(UIColor * _Nonnull)color withCornerRadius:(CGFloat)radius andWidth:(CGFloat)width {
     self.layer.borderWidth = width;
     self.layer.cornerRadius = radius;
     self.layer.shouldRasterize = NO;
@@ -32,24 +32,24 @@
     CGColorSpaceRelease(space);
 }
 
-- (void)removeBorders {
+- (void)be_removeBorders {
     self.layer.borderWidth = 0;
     self.layer.cornerRadius = 0;
     self.layer.borderColor = nil;
 }
 
-- (void)removeShadow {
+- (void)be_removeShadow {
     [self.layer setShadowColor:[[UIColor clearColor] CGColor]];
     [self.layer setShadowOpacity:0.0f];
     [self.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
 }
 
-- (void)setCornerRadius:(CGFloat)radius {
+- (void)be_setCornerRadius:(CGFloat)radius {
     self.layer.cornerRadius = radius;
     [self.layer setMasksToBounds:YES];
 }
 
-- (void)createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
+- (void)be_createRectShadowWithOffset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -57,7 +57,7 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
+- (void)be_createCornerRadiusShadowWithCornerRadius:(CGFloat)cornerRadius offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowOffset = offset;
@@ -68,7 +68,7 @@
     self.layer.masksToBounds = NO;
 }
 
-- (void)createGradientWithColors:(NSArray * _Nonnull)colors direction:(UIViewLinearGradientDirection)direction {
+- (void)be_createGradientWithColors:(NSArray * _Nonnull)colors direction:(UIViewLinearGradientDirection)direction {
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
     
@@ -114,7 +114,7 @@
     [self.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)shakeView {
+- (void)be_shakeView {
     CAKeyframeAnimation *shake = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     shake.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-5.0f, 0.0f, 0.0f)], [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(5.0f, 0.0f, 0.0f)]];
     shake.autoreverses = YES;
@@ -124,7 +124,7 @@
     [self.layer addAnimation:shake forKey:@"shake"];
 }
 
-- (void)pulseViewWithDuration:(CGFloat)duration {
+- (void)be_pulseViewWithDuration:(CGFloat)duration {
     [UIView animateWithDuration:duration / 6 animations:^{
         [self setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
     } completion:^(BOOL finished) {
@@ -160,11 +160,7 @@
     }];
 }
 
-- (void)pulseViewWithTime:(CGFloat)seconds {
-    [self pulseViewWithDuration:seconds];
-}
-
-- (void)heartbeatViewWithDuration:(CGFloat)duration {
+- (void)be_heartbeatViewWithDuration:(CGFloat)duration {
     float maxSize = 1.4f, durationPerBeat = 0.5f;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -188,7 +184,7 @@
     [self.layer addAnimation:animation forKey:@"heartbeat"];
 }
 
-- (void)applyMotionEffects {
+- (void)be_applyMotionEffects {
     UIInterpolatingMotionEffect *horizontalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     horizontalEffect.minimumRelativeValue = @(-10.0f);
     horizontalEffect.maximumRelativeValue = @(10.0f);
@@ -201,7 +197,7 @@
     [self addMotionEffect:motionEffectGroup];
 }
 
-- (void)flipWithDuration:(NSTimeInterval)duration direction:(UIViewAnimationFlipDirection)direction {
+- (void)be_flipWithDuration:(NSTimeInterval)duration direction:(UIViewAnimationFlipDirection)direction {
     NSString *subtype = nil;
     
     switch (direction) {
@@ -233,7 +229,7 @@
     [self.layer addAnimation:transition forKey:@"flip"];
 }
 
-- (void)translateAroundTheView:(UIView * _Nonnull)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
+- (void)be_translateAroundTheView:(UIView * _Nonnull)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
     CGFloat startPosition = self.center.x, endPosition;
     switch (direction) {
         case UIViewAnimationTranslationDirectionFromLeftToRight: {
@@ -262,7 +258,7 @@
             } completion:^(BOOL finished) {
                 if (finished) {
                     if (repeat) {
-                        [self translateAroundTheView:topView duration:duration direction:direction repeat:repeat startFromEdge:startFromEdge];
+                        [self be_translateAroundTheView:topView duration:duration direction:direction repeat:repeat startFromEdge:startFromEdge];
                     }
                 }
             }];
@@ -270,7 +266,7 @@
     }];
 }
 
-- (UIImage * _Nonnull)screenshot {
+- (UIImage * _Nonnull)be_screenshot {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, [UIScreen mainScreen].scale);
     
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
@@ -284,14 +280,14 @@
     return image;
 }
 
-- (UIImage * _Nonnull)saveScreenshot {
-    UIImage *image = [self screenshot];
+- (UIImage * _Nonnull)be_saveScreenshot {
+    UIImage *image = [self be_screenshot];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     
     return image;
 }
 
-- (void)removeAllSubviews {
+- (void)be_removeAllSubviews {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 

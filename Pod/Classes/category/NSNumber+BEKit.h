@@ -30,8 +30,4 @@ CGFloat BE_RadiansToDegrees(CGFloat radians);
 + (CGFloat)be_randomFloatBetweenMin:(CGFloat)minValue
                           andMax:(CGFloat)maxValue;
 
-+ (NSInteger)be_nextPowerOfTwo:(NSInteger)number;
-
-+ (BOOL)be_isPowerOfTwo:(NSInteger)number;
-
 @end

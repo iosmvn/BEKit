@@ -10,7 +10,7 @@
 
 @implementation UIScrollView (BEKit)
 
-+ (instancetype _Nonnull)initWithFrame:(CGRect)frame contentSize:(CGSize)contentSize clipsToBounds:(BOOL)clipsToBounds pagingEnabled:(BOOL)pagingEnabled showScrollIndicators:(BOOL)showScrollIndicators delegate:(id<UIScrollViewDelegate> _Nullable)delegate {
++ (instancetype _Nonnull)be_initWithFrame:(CGRect)frame contentSize:(CGSize)contentSize clipsToBounds:(BOOL)clipsToBounds pagingEnabled:(BOOL)pagingEnabled showScrollIndicators:(BOOL)showScrollIndicators delegate:(id<UIScrollViewDelegate> _Nullable)delegate {
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     [scrollView setDelegate:delegate];
     [scrollView setPagingEnabled:pagingEnabled];

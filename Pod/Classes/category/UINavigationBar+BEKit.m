@@ -10,11 +10,11 @@
 
 @implementation UINavigationBar (BEKit)
 
-- (void)setTransparent:(BOOL)transparent {
-    [self setTransparent:transparent translucent:YES];
+- (void)be_setTransparent:(BOOL)transparent {
+    [self be_setTransparent:transparent translucent:YES];
 }
 
-- (void)setTransparent:(BOOL)transparent translucent:(BOOL)translucent {
+- (void)be_setTransparent:(BOOL)transparent translucent:(BOOL)translucent {
     if (transparent) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         self.shadowImage = [UIImage new];

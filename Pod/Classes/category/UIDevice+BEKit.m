@@ -16,12 +16,12 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 
-static NSString * const BFUniqueIdentifierDefaultsKey = @"BFUniqueIdentifier";
-static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdentifier";
+static NSString * const BEUniqueIdentifierDefaultsKey = @"BEUniqueIdentifier";
+static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdentifier";
 
 @implementation UIDevice (BEKit)
 
-+ (NSString * _Nonnull)devicePlatform {
++ (NSString * _Nonnull)be_devicePlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -31,8 +31,8 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     return platform;
 }
 
-+ (NSString * _Nonnull)devicePlatformString {
-    NSString *platform = [self devicePlatform];
++ (NSString * _Nonnull)be_devicePlatformString {
+    NSString *platform = [self be_devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
@@ -105,67 +105,59 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     return platform;
 }
 
-+ (BOOL)isiPad {
-    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPad"]) {
++ (BOOL)be_isiPad {
+    if ([[[self be_devicePlatform] substringToIndex:4] isEqualToString:@"iPad"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isiPhone {
-    if ([[[self devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"]) {
++ (BOOL)be_isiPhone {
+    if ([[[self be_devicePlatform] substringToIndex:6] isEqualToString:@"iPhone"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isiPod {
-    if ([[[self devicePlatform] substringToIndex:4] isEqualToString:@"iPod"]) {
++ (BOOL)be_isiPod {
+    if ([[[self be_devicePlatform] substringToIndex:4] isEqualToString:@"iPod"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isAppleTV {
-    if ([[[self devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"]) {
++ (BOOL)be_isAppleTV {
+    if ([[[self be_devicePlatform] substringToIndex:7] isEqualToString:@"AppleTV"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isAppleWatch {
-    if ([[[self devicePlatform] substringToIndex:5] isEqualToString:@"Watch"]) {
++ (BOOL)be_isAppleWatch {
+    if ([[[self be_devicePlatform] substringToIndex:5] isEqualToString:@"Watch"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isSimulator {
-    if ([[self devicePlatform] isEqualToString:@"i386"] || [[self devicePlatform] isEqualToString:@"x86_64"]) {
++ (BOOL)be_isSimulator {
+    if ([[self be_devicePlatform] isEqualToString:@"i386"] || [[self be_devicePlatform] isEqualToString:@"x86_64"]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-+ (BOOL)isRetina {
-    return [UIScreen isRetina];
-}
-
-+ (BOOL)isRetinaHD {
-    return [UIScreen isRetinaHD];
-}
-
-+ (NSInteger)iOSVersion {
++ (NSInteger)be_iOSVersion {
     return [[[UIDevice currentDevice] systemVersion] integerValue];
 }
 
-+ (NSUInteger)getSysInfo:(uint)typeSpecifier {
++ (NSUInteger)be_getSysInfo:(uint)typeSpecifier {
     size_t size = sizeof(int);
     int results;
     int mib[2] = {CTL_HW, typeSpecifier};
@@ -173,103 +165,57 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     return (NSUInteger) results;
 }
 
-+ (NSUInteger)cpuFrequency {
-    return [self getSysInfo:HW_CPU_FREQ];
++ (NSUInteger)be_cpuFrequency {
+    return [self be_getSysInfo:HW_CPU_FREQ];
 }
 
-+ (NSUInteger)busFrequency {
-    return [self getSysInfo:HW_TB_FREQ];
++ (NSUInteger)be_busFrequency {
+    return [self be_getSysInfo:HW_TB_FREQ];
 }
 
-+ (NSUInteger)ramSize {
-    return [self getSysInfo:HW_MEMSIZE];
++ (NSUInteger)be_ramSize {
+    return [self be_getSysInfo:HW_MEMSIZE];
 }
 
-+ (NSUInteger)cpuNumber {
-    return [self getSysInfo:HW_NCPU];
++ (NSUInteger)be_cpuNumber {
+    return [self be_getSysInfo:HW_NCPU];
 }
 
-+ (NSUInteger)totalMemory {
-    return [self getSysInfo:HW_PHYSMEM];
++ (NSUInteger)be_totalMemory {
+    return [self be_getSysInfo:HW_PHYSMEM];
 }
 
-+ (NSUInteger)userMemory {
-    return [self getSysInfo:HW_USERMEM];
++ (NSUInteger)be_userMemory {
+    return [self be_getSysInfo:HW_USERMEM];
 }
 
-+ (NSNumber * _Nonnull)totalDiskSpace {
++ (NSNumber * _Nonnull)be_totalDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemSize];
 }
 
-+ (NSNumber * _Nonnull)freeDiskSpace {
++ (NSNumber * _Nonnull)be_freeDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
 }
 
-+ (NSString * _Nonnull)macAddress {
-    // In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00
-    /*int                 mib[6];
-    size_t              len;
-    char                *buf;
-    unsigned char       *ptr;
-    struct if_msghdr    *ifm;
-    struct sockaddr_dl  *sdl;
-    
-    mib[0] = CTL_NET;
-    mib[1] = AF_ROUTE;
-    mib[2] = 0;
-    mib[3] = AF_LINK;
-    mib[4] = NET_RT_IFLIST;
-    
-    if ((mib[5] = if_nametoindex("en0")) == 0) {
-        printf("Error: if_nametoindex error\n");
-        return NULL;
-    }
-    
-    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
-        printf("Error: sysctl, take 1\n");
-        return NULL;
-    }
-    
-    if ((buf = malloc(len)) == NULL) {
-        printf("Could not allocate memory. Error!\n");
-        return NULL;
-    }
-    
-    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
-        printf("Error: sysctl, take 2");
-        return NULL;
-    }
-    
-    ifm = (struct if_msghdr *)buf;
-    sdl = (struct sockaddr_dl *)(ifm + 1);
-    ptr = (unsigned char *)LLADDR(sdl);
-    NSString *outstring = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
-                           *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
-    free(buf);
-    
-    return outstring;*/
-    return @"02:00:00:00:00:00";
-}
-
-+ (NSString * _Nonnull)uniqueIdentifier {
++ (NSString * _Nonnull)be_uniqueIdentifier {
     NSString *UUID;
     if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)]) {
         UUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     } else {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        UUID = [defaults stringForKey:BFUniqueIdentifierDefaultsKey];
+        UUID = [defaults stringForKey:BEUniqueIdentifierDefaultsKey];
         if (!UUID) {
             UUID = [NSString be_generateUUID];
-            [defaults setObject:UUID forKey:BFUniqueIdentifierDefaultsKey];
+            [defaults setObject:UUID forKey:BEUniqueIdentifierDefaultsKey];
             [defaults synchronize];
         }
     }
     return UUID;
 }
 
-+ (void)updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block {
++ (void)be_updateUniqueIdentifier:(NSObject * _Nonnull)uniqueIdentifier block:(void (^ _Nullable)(BOOL isValid, BOOL hasToUpdateUniqueIdentifier, NSString * _Nullable oldUUID))block {
     NSString *userUUID, *savedUUID = nil;
     BOOL isValid = false, hasToUpdate = false;
     
@@ -283,9 +229,9 @@ static NSString * const BFUserUniqueIdentifierDefaultsKey = @"BFUserUniqueIdenti
     
     if (isValid) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        savedUUID = [defaults stringForKey:BFUserUniqueIdentifierDefaultsKey];
+        savedUUID = [defaults stringForKey:BEUserUniqueIdentifierDefaultsKey];
         if (!savedUUID || ![savedUUID isEqualToString:userUUID]) {
-            [defaults setObject:userUUID forKey:BFUserUniqueIdentifierDefaultsKey];
+            [defaults setObject:userUUID forKey:BEUserUniqueIdentifierDefaultsKey];
             [defaults synchronize];
             
             hasToUpdate = true;

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 /**
  *  Get App name
  */
@@ -23,17 +24,15 @@
  */
 #define BE_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
+#define BE_APP_BundleId [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]
+
 /**
  *  Use BELocalizedString to use the string translated by BEKit
  */
 #define BELocalizedString(key, comment) \
     [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BEKit"]
 
-/**
- *  Get AppDelegate
- */
-//#define APP_DELEGATE ((AppDelegate *)[[UIApplication sharedApplication] delegate])
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 @interface BEConfigUtil : NSObject
 

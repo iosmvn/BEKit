@@ -10,33 +10,33 @@
 
 @implementation UIColor (BEKit)
 
-+ (UIColor * _Nonnull)hex:(NSString *)hexString {
++ (UIColor * _Nonnull)be_hex:(NSString *)hexString {
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
     CGFloat alpha, red, blue, green;
     switch ([colorString length]) {
         case 3: // #RGB
             alpha = 1.0f;
-            red = [self colorComponentFrom:colorString start:0 length:1];
-            green = [self colorComponentFrom:colorString start:1 length:1];
-            blue = [self colorComponentFrom:colorString start:2 length:1];
+            red = [self be_colorComponentFrom:colorString start:0 length:1];
+            green = [self be_colorComponentFrom:colorString start:1 length:1];
+            blue = [self be_colorComponentFrom:colorString start:2 length:1];
             break;
         case 4: // #ARGB
-            alpha = [self colorComponentFrom:colorString start:0 length:1];
-            red = [self colorComponentFrom:colorString start:1 length:1];
-            green = [self colorComponentFrom:colorString start:2 length:1];
-            blue = [self colorComponentFrom:colorString start:3 length:1];
+            alpha = [self be_colorComponentFrom:colorString start:0 length:1];
+            red = [self be_colorComponentFrom:colorString start:1 length:1];
+            green = [self be_colorComponentFrom:colorString start:2 length:1];
+            blue = [self be_colorComponentFrom:colorString start:3 length:1];
             break;
         case 6: // #RRGGBB
             alpha = 1.0f;
-            red = [self colorComponentFrom:colorString start:0 length:2];
-            green = [self colorComponentFrom:colorString start:2 length:2];
-            blue = [self colorComponentFrom:colorString start:4 length:2];
+            red = [self be_colorComponentFrom:colorString start:0 length:2];
+            green = [self be_colorComponentFrom:colorString start:2 length:2];
+            blue = [self be_colorComponentFrom:colorString start:4 length:2];
             break;
         case 8: // #AARRGGBB
-            alpha = [self colorComponentFrom:colorString start:0 length:2];
-            red = [self colorComponentFrom:colorString start:2 length:2];
-            green = [self colorComponentFrom:colorString start:4 length:2];
-            blue = [self colorComponentFrom:colorString start:6 length:2];
+            alpha = [self be_colorComponentFrom:colorString start:0 length:2];
+            red = [self be_colorComponentFrom:colorString start:2 length:2];
+            green = [self be_colorComponentFrom:colorString start:4 length:2];
+            blue = [self be_colorComponentFrom:colorString start:6 length:2];
             break;
         default:
             return nil;
@@ -45,15 +45,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-+ (UIColor * _Nonnull )hexString:(NSString *)hexString {
-    return [UIColor hex:hexString];
-}
-
-+ (UIColor * _Nonnull)colorWithHexString:(NSString *)hexString {
-    return [UIColor hex:hexString];
-}
-
-+ (CGFloat)colorComponentFrom:(NSString * _Nonnull)string start:(NSUInteger)start length:(NSUInteger)length {
++ (CGFloat)be_colorComponentFrom:(NSString * _Nonnull)string start:(NSUInteger)start length:(NSUInteger)length {
     NSString *substring = [string substringWithRange:NSMakeRange(start, length)];
     NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat:@"%@%@", substring, substring];
     unsigned hexComponent;
@@ -62,28 +54,15 @@
     return hexComponent / 255.0;
 }
 
-+ (id _Nonnull)colorWithHex:(unsigned int)hex {
-	return [UIColor colorWithHex:hex alpha:1.0];
++ (id _Nonnull)be_colorWithHex:(unsigned int)hex {
+	return [UIColor be_colorWithHex:hex alpha:1.0];
 }
 
-+ (id _Nonnull)colorWithHex:(unsigned int)hex alpha:(float)alpha {
++ (id _Nonnull)be_colorWithHex:(unsigned int)hex alpha:(float)alpha {
 	return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:alpha];
 }
 
-+ (UIColor * _Nonnull)colorForColorString:(NSString * _Nonnull)colorString {
-    if (!colorString) {
-        return [UIColor lightGrayColor];
-    }
-    
-    SEL colorSelector = NSSelectorFromString([colorString.lowercaseString stringByAppendingString:@"Color"]);
-    if ([UIColor respondsToSelector:colorSelector]) {
-        return [UIColor performSelector:colorSelector];
-    } else {
-        return [UIColor hex:colorString];
-    }
-}
-
-+ (UIColor * _Nonnull)randomColor {
++ (UIColor * _Nonnull)be_randomColor {
 	int r = arc4random() % 255;
 	int g = arc4random() % 255;
 	int b = arc4random() % 255;
@@ -91,11 +70,11 @@
 	return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
 }
 
-+ (UIColor * _Nonnull)colorWithColor:(UIColor * _Nonnull)color alpha:(float)alpha {
++ (UIColor * _Nonnull)be_colorWithColor:(UIColor * _Nonnull)color alpha:(float)alpha {
     return [color colorWithAlphaComponent:alpha];
 }
 
-- (BOOL)canProvideRGBComponents {
+- (BOOL)be_canProvideRGBComponents {
     switch (CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor))) {
         case kCGColorSpaceModelRGB:
         case kCGColorSpaceModelMonochrome:
@@ -106,7 +85,7 @@
 }
 
 - (CGFloat)red {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         const CGFloat *c = CGColorGetComponents(self.CGColor);
         return c[0];
     }
@@ -115,7 +94,7 @@
 }
 
 - (CGFloat)green {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         const CGFloat *c = CGColorGetComponents(self.CGColor);
         if (CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == kCGColorSpaceModelMonochrome)
             return c[0];
@@ -126,7 +105,7 @@
 }
 
 - (CGFloat)blue {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         const CGFloat *c = CGColorGetComponents(self.CGColor);
         if (CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor)) == kCGColorSpaceModelMonochrome)
             return c[0];
@@ -146,7 +125,7 @@
 }
 
 - (CGFloat)hue {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         CGFloat h = 0.0f;
         [self hue:&h saturation:nil brightness:nil alpha:nil];
         return h;
@@ -156,7 +135,7 @@
 }
 
 - (CGFloat)saturation {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         CGFloat s = 0.0f;
         [self hue:nil saturation:&s brightness:nil alpha:nil];
         return s;
@@ -166,7 +145,7 @@
 }
 
 - (CGFloat)brightness {
-    if (self.canProvideRGBComponents) {
+    if (self.be_canProvideRGBComponents) {
         CGFloat v = 0.0f;
         [self hue:nil saturation:nil brightness:&v alpha:nil];
         return v;
@@ -177,36 +156,6 @@
 
 - (CGFloat)alpha {
     return CGColorGetAlpha(self.CGColor);
-}
-
-- (CGFloat)luminance {
-    if (self.canProvideRGBComponents) {
-        CGFloat r, g, b;
-        if (![self red:&r green:&g blue:&b alpha:nil]) {
-            return 0.0f;
-        }
-        
-        return r * 0.2126f + g * 0.7152f + b * 0.0722f;
-    }
-    
-    return 0.0;
-}
-
-- (UIColor * _Nonnull)contrastingColor {
-    return (self.luminance > 0.5f) ? [UIColor blackColor] : [UIColor whiteColor];
-}
-
-- (UIColor * _Nonnull)complementaryColor {
-    CGFloat h, s, v, a;
-    if (![self hue:&h saturation:&s brightness:&v alpha:&a]) {
-        return nil;
-    }
-
-    h += 180.0f;
-    if (h > 360.f)
-        h -= 360.0f;
-    
-    return [UIColor colorWithHue:h saturation:s brightness:v alpha:a];
 }
 
 - (BOOL)hue:(CGFloat * _Nullable)hue saturation:(CGFloat * _Nullable)saturation brightness:(CGFloat * _Nullable)brightness alpha:(CGFloat * _Nullable)alpha {
