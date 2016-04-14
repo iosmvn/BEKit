@@ -1,0 +1,6 @@
+framework module BEKit {
+  umbrella header "BEKit.h"
+
+  export *
+  module * { export * }
+}
