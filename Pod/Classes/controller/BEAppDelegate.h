@@ -12,7 +12,7 @@
 
 @interface BEAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+//@property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, copy) void (^viewWillAppearBlock)(BOOL animated);
 @property (nonatomic, copy) void (^viewWillDisappearBlock)(BOOL animated);
