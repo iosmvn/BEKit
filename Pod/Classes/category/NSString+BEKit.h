@@ -116,6 +116,13 @@
        caseSensitive:(BOOL)caseSensitive;
 
 /**
+ *  Check if self is an valid string and not empty string
+ *
+ *  @return YES if it's an valid string and not empty string, NO if not
+ */
+- (BOOL)be_isValidString;
+
+/**
  *  Check if self is an email
  *
  *  @return Returns YES if it's an email, NO if not

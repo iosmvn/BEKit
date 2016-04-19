@@ -8,6 +8,7 @@
 
 #import "NSString+BEKit.h"
 #import "NSData+BEKit.h"
+#import "NSObject+BEKit.h"
 #import "BECryptographyUtil.h"
 
 @implementation NSString (BEKit)
@@ -94,6 +95,10 @@
     } else {
         return [self.lowercaseString rangeOfString:substring.lowercaseString].location != NSNotFound;
     }
+}
+
+- (BOOL)be_isValidString {
+    return [self be_isValid] && self.length > 0;
 }
 
 - (BOOL)be_isEmail {
