@@ -42,7 +42,7 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
 + (NSArray * _Nullable)be_loadArrayFromPath:(DirectoryType)path
                             withFilename:(NSString * _Nonnull)fileName;
 
-+ (void)be_createDirectoryAtPath:(NSString *)fullPath;
++ (BOOL)be_createDirectoryAtPath:(NSString * _Nonnull)fullPath;
 
 + (NSString * _Nonnull)be_getBundlePathForFile:(NSString * _Nonnull)fileName;
 

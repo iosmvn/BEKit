@@ -58,11 +58,13 @@
 }
 
 //创建文件夹
-+ (void)be_createDirectoryAtPath:(NSString *)fullPath {
++ (BOOL)be_createDirectoryAtPath:(NSString * _Nonnull)fullPath {
+    BOOL result = YES;
     NSFileManager *fileManager = [NSFileManager defaultManager];//创建文件管理器
     if (![fileManager fileExistsAtPath:fullPath]) {//如果文件管理器中没有此目录则创建此目录
-        [fileManager createDirectoryAtPath:fullPath withIntermediateDirectories:YES attributes:nil error:nil];
+        result = [fileManager createDirectoryAtPath:fullPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
+    return result;
 }
 
 + (NSString * _Nonnull)be_getBundlePathForFile:(NSString * _Nonnull)fileName {
