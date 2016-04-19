@@ -57,6 +57,14 @@
     return [NSKeyedUnarchiver unarchiveObjectWithFile:_path];
 }
 
+//创建文件夹
++ (void)be_createDirectoryAtPath:(NSString *)fullPath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];//创建文件管理器
+    if (![fileManager fileExistsAtPath:fullPath]) {//如果文件管理器中没有此目录则创建此目录
+        [fileManager createDirectoryAtPath:fullPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
+
 + (NSString * _Nonnull)be_getBundlePathForFile:(NSString * _Nonnull)fileName {
     NSString *fileExtension = [fileName pathExtension];
     return [[NSBundle mainBundle] pathForResource:[fileName stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@", fileExtension] withString:@""] ofType:fileExtension];
