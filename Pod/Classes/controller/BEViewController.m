@@ -38,28 +38,28 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (BE_AppDelegate.viewWillAppearBlock) {
-        BE_AppDelegate.viewWillAppearBlock(animated);
+        BE_AppDelegate.viewWillAppearBlock(NSStringFromClass([self class]), animated);
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (BE_AppDelegate.viewDidAppearBlock) {
-        BE_AppDelegate.viewDidAppearBlock(animated);
+        BE_AppDelegate.viewDidAppearBlock(NSStringFromClass([self class]), animated);
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (BE_AppDelegate.viewWillDisappearBlock) {
-        BE_AppDelegate.viewWillDisappearBlock(animated);
+        BE_AppDelegate.viewWillDisappearBlock(NSStringFromClass([self class]), animated);
     }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     if (BE_AppDelegate.viewDidDisappearBlock) {
-        BE_AppDelegate.viewDidDisappearBlock(animated);
+        BE_AppDelegate.viewDidDisappearBlock(NSStringFromClass([self class]), animated);
     }
 }
 

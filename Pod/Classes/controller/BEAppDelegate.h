@@ -14,9 +14,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, copy) void (^viewWillAppearBlock)(BOOL animated);
-@property (nonatomic, copy) void (^viewWillDisappearBlock)(BOOL animated);
-@property (nonatomic, copy) void (^viewDidAppearBlock)(BOOL animated);
-@property (nonatomic, copy) void (^viewDidDisappearBlock)(BOOL animated);
+@property (nonatomic, copy) void (^viewWillAppearBlock)(NSString *pageName, BOOL animated);
+@property (nonatomic, copy) void (^viewWillDisappearBlock)(NSString *pageName, BOOL animated);
+@property (nonatomic, copy) void (^viewDidAppearBlock)(NSString *pageName, BOOL animated);
+@property (nonatomic, copy) void (^viewDidDisappearBlock)(NSString *pageName, BOOL animated);
 
 @end
