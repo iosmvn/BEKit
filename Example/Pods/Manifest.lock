@@ -1,5 +1,5 @@
 PODS:
-  - BEKit (0.1.5):
+  - BEKit (0.1.6):
     - SDWebImage (~> 3.7.5)
   - Expecta (1.0.5)
   - Expecta+Snapshots (2.0.0):
@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BEKit: c15a6e91d833ba1633e6899a54f84cd9531a375e
+  BEKit: 69bc9cda04dc9573d1d4cfc7a77e829a8a4ea65c
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
