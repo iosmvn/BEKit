@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "51769dfa-db8e-44c7-8ebc-fa9744a95c79++6369",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "51769dfa-db8e-44c7-8ebc-fa9744a95c79++6369" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "51769dfa-db8e-44c7-8ebc-fa9744a95c79++6369" : 0,
+    "5DDCA0A7561CE1EC5C5990A8D7834440EAB4C775" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5A6CA0C8-2627-4504-A504-DC425D4B14C5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "51769dfa-db8e-44c7-8ebc-fa9744a95c79++6369" : "",
+    "5DDCA0A7561CE1EC5C5990A8D7834440EAB4C775" : "BEKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BEKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/BEKit.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/112.65.142.83\/ormcode",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "51769dfa-db8e-44c7-8ebc-fa9744a95c79++6369"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iosmvn\/BEKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5DDCA0A7561CE1EC5C5990A8D7834440EAB4C775"
+    }
+  ]
+}
