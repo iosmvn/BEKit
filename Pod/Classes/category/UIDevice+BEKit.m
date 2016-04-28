@@ -31,14 +31,14 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
     return platform;
 }
 
-+ (NSString * _Nonnull)be_devicePlatformString {
++ (NSString * _Nonnull)be_devicePlatformString {//https://www.theiphonewiki.com/wiki/Models
     NSString *platform = [self be_devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
     if ([platform isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
     if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4 (GSM)";
-    if ([platform isEqualToString:@"iPhone3,1"])    return @"iPhone 4 (Rev. A)";
+    if ([platform isEqualToString:@"iPhone3,2"])    return @"iPhone 4 (Rev. A)";
     if ([platform isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
     if ([platform isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
     if ([platform isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
@@ -51,6 +51,7 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
     if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
     if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
+    if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -75,6 +76,12 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
     if ([platform isEqualToString:@"iPad4,3"])      return @"iPad Air (China)";
     if ([platform isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
     if ([platform isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
+    // iPad Pro 9.7 inch
+    if ([platform isEqualToString:@"iPad6,3"])      return @"iPad Pro (9.7 inch)";
+    if ([platform isEqualToString:@"iPad6,4"])      return @"iPad Pro (9.7 inch)";
+    // iPad Pro (12.9 inch)
+    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
+    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
     // iPad mini
     if ([platform isEqualToString:@"iPad2,5"])      return @"iPad mini (WiFi)";
     if ([platform isEqualToString:@"iPad2,6"])      return @"iPad mini (GSM)";
@@ -87,9 +94,6 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
     if ([platform isEqualToString:@"iPad4,9"])      return @"iPad mini 3 (China)";
     if ([platform isEqualToString:@"iPad5,1"])      return @"iPad mini 4 (WiFi)";
     if ([platform isEqualToString:@"iPad5,2"])      return @"iPad mini 4 (Cellular)";
-    // iPad Pro
-    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
-    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
     // Apple TV
     if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
     if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
