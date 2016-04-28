@@ -43,6 +43,8 @@
 //设备平台，比如：iPhone7,2
 + (NSString * _Nonnull)be_devicePlatform;
 
++ (NSString * _Nonnull)be_HWModel;
+
 //设备平台描述，比如：iPad Air (Cellular)
 + (NSString * _Nonnull)be_devicePlatformString;
 
@@ -91,6 +93,13 @@
 
 //当前设备剩余磁盘空间
 + (NSNumber * _Nonnull)be_freeDiskSpace;
+
+/**
+ *  Returns the current device MAC address
+ *
+ *  @return Returns the current device MAC address
+ */
++ (NSString * _Nonnull)be_macAddress;
 
 /**
  *  Generate an unique identifier and store it into standardUserDefaults

@@ -31,6 +31,16 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
     return platform;
 }
 
++ (NSString * _Nonnull)be_HWModel {
+    size_t size;
+    sysctlbyname("hw.model", NULL, &size, NULL, 0);
+    char *machine = malloc(size);
+    sysctlbyname("hw.model", machine, &size, NULL, 0);
+    NSString *platform = [NSString stringWithUTF8String:machine];
+    free(machine);
+    return platform;
+}
+
 + (NSString * _Nonnull)be_devicePlatformString {//https://www.theiphonewiki.com/wiki/Models
     NSString *platform = [self be_devicePlatform];
     // iPhone
@@ -201,6 +211,52 @@ static NSString * const BEUserUniqueIdentifierDefaultsKey = @"BEUserUniqueIdenti
 + (NSNumber * _Nonnull)be_freeDiskSpace {
     NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [attributes objectForKey:NSFileSystemFreeSize];
+}
+
++ (NSString * _Nonnull)be_macAddress {
+    // In iOS 7 and later, if you ask for the MAC address of an iOS device, the system returns the value 02:00:00:00:00:00
+    int                 mib[6];
+    size_t              len;
+    char                *buf;
+    unsigned char       *ptr;
+    struct if_msghdr    *ifm;
+    struct sockaddr_dl  *sdl;
+    
+    mib[0] = CTL_NET;
+    mib[1] = AF_ROUTE;
+    mib[2] = 0;
+    mib[3] = AF_LINK;
+    mib[4] = NET_RT_IFLIST;
+    
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
+        printf("Error: if_nametoindex error\n");
+        return NULL;
+    }
+    
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 1\n");
+        return NULL;
+    }
+    
+    if ((buf = malloc(len)) == NULL) {
+        printf("Could not allocate memory. Error!\n");
+        return NULL;
+    }
+    
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 2");
+        return NULL;
+    }
+    
+    ifm = (struct if_msghdr *)buf;
+    sdl = (struct sockaddr_dl *)(ifm + 1);
+    ptr = (unsigned char *)LLADDR(sdl);
+    NSString *outstring = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
+                           *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
+    free(buf);
+    
+    return outstring;
+    //    return @"02:00:00:00:00:00";
 }
 
 + (NSString * _Nonnull)be_uniqueIdentifier {
