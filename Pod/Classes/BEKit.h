@@ -9,6 +9,27 @@
 #ifndef BEKit_h
 #define BEKit_h
 
+#import <CocoaLumberjack/CocoaLumberjack.h>
+/*
+ *创建日志输出方法
+ */
+#ifdef DEBUG
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
+#define NSLog(frmt, ...)    DDLogInfo((@"%s [第%d行]:" frmt), __PRETTY_FUNCTION__, __LINE__,        ##__VA_ARGS__)
+
+#else
+
+static const int ddLogLevel = LOG_LEVEL_OFF;
+
+#define NSLog(frmt, ...)
+
+
+#endif
+
+
+
 //controller
 #import "BEAppDelegate.h"
 #import "BEViewController.h"
