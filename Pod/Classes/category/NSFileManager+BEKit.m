@@ -319,7 +319,7 @@
         //获取当前目录下的所有文件
         NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
         for (NSString *fileName in subFileList) {
-            result += [self be_folderSizeAtDirectory:[path stringByAppendingPathComponent:fileName]];
+            result += [self be_folderSizeAtPath:[path stringByAppendingPathComponent:fileName]];
         }
     } else {//文件
         //获取文件属性
