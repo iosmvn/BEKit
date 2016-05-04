@@ -336,7 +336,10 @@
         //获取当前目录下的所有文件
         NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
         for (NSString *fileName in subFileList) {
-            [result addObject:[self be_getAllFileInfoAtPath:[path stringByAppendingPathComponent:fileName]]];
+            NSArray *tmpList = [self be_getAllFileInfoAtPath:[path stringByAppendingPathComponent:fileName]];
+            if (tmpList && [tmpList count] > 0) {
+                [result addObjectsFromArray:tmpList];
+            }
         }
     } else {//文件
         if ([fileMgr fileExistsAtPath:path]) {

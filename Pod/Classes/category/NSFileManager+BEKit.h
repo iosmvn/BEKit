@@ -30,8 +30,8 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
     DirectoryTypeCache
 };
 
-NSString * const BE_fileName = @"BE_fileName_Key";
-NSString * const BE_filePath = @"BE_filePath_Key";
+#define BE_fileName @"BE_fileName_Key"
+#define BE_filePath @"BE_filePath_Key"
 
 @interface NSFileManager (BEKit)
 
