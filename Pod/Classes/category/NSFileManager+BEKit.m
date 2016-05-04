@@ -328,4 +328,29 @@
     return result;
 }
 
++ (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path {
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:0];
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    BOOL isDir; //判断是否是为目录
+    if ([fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir) {//目录
+        //获取当前目录下的所有文件
+        NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
+        for (NSString *fileName in subFileList) {
+            [result addObject:[self be_getAllFileInfoAtPath:[path stringByAppendingPathComponent:fileName]]];
+        }
+    } else {//文件
+        NSMutableDictionary *subInfo = nil;
+        if ([fileMgr fileExistsAtPath:path]) {
+            NSString *fileName = [[path componentsSeparatedByString:@"/"] lastObject];
+            //获取文件属性
+            NSDictionary *fileAttributes = [fileMgr attributesOfItemAtPath:path error:nil];
+            subInfo = [NSMutableDictionary dictionaryWithDictionary:fileAttributes];
+            [subInfo setValue:path forKey:BE_filePath];
+            [subInfo setValue:fileName forKey:BE_fileName];
+        }
+        return subInfo;
+    }
+    return result;
+}
+
 @end
