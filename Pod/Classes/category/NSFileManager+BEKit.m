@@ -302,4 +302,30 @@
     return [self be_setSettings:BE_APP_NAME object:value forKey:objKey];
 }
 
++ (unsigned long long)be_fileSizeAtPath:(NSString * _Nonnull)path {
+    unsigned long long result = 0;
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    if ([fileMgr fileExistsAtPath:path]){
+        result = [[fileMgr attributesOfItemAtPath:path error:nil] fileSize];
+    }
+    return result;
+}
+
++ (unsigned long long)be_folderSizeAtDirectory:(NSString * _Nonnull)path {
+    long long result = 0;
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    BOOL isDir; //判断是否是为目录
+    if ([fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir) {//目录
+        //获取当前目录下的所有文件
+        NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
+        for (NSString *fileName in subFileList) {
+            result += [self be_folderSizeAtDirectory:[path stringByAppendingPathComponent:fileName]];
+        }
+    } else {//文件
+        //获取文件属性
+        return [self be_fileSizeAtPath:path];
+    }
+    return result;
+}
+
 @end

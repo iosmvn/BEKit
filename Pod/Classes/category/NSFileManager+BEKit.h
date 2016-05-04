@@ -89,4 +89,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
              object:(id _Nonnull)value
              forKey:(NSString * _Nonnull)objKey;
 
+
++ (unsigned long long)be_fileSizeAtPath:(NSString * _Nonnull)path;
+
++ (unsigned long long)be_folderSizeAtDirectory:(NSString * _Nonnull)path;
+
 @end
