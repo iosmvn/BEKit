@@ -363,7 +363,7 @@
     return result;
 }
 
-- (NSDate * _Nullable)be_getFileCreateTime:(NSString * _Nonnull)path {
++ (NSDate * _Nullable)be_getFileCreateTime:(NSString * _Nonnull)path {
     NSDate *result = nil;
     NSFileManager *fileMgr = [[NSFileManager alloc] init];
     NSDictionary *fileAttributes = [fileMgr attributesOfItemAtPath:path error:nil];
