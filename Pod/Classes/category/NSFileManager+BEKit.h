@@ -101,4 +101,6 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
 
 + (BOOL)be_isDirectory:(NSString * _Nonnull)path;
 
+- (NSDate * _Nullable)be_getFileCreateTime:(NSString * _Nonnull)path;
+
 @end
