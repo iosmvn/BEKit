@@ -339,16 +339,16 @@
             [result addObject:[self be_getAllFileInfoAtPath:[path stringByAppendingPathComponent:fileName]]];
         }
     } else {//文件
-        NSMutableDictionary *subInfo = nil;
         if ([fileMgr fileExistsAtPath:path]) {
             NSString *fileName = [[path componentsSeparatedByString:@"/"] lastObject];
             //获取文件属性
             NSDictionary *fileAttributes = [fileMgr attributesOfItemAtPath:path error:nil];
-            subInfo = [NSMutableDictionary dictionaryWithDictionary:fileAttributes];
+            NSMutableDictionary *subInfo = [NSMutableDictionary dictionaryWithDictionary:fileAttributes];
             [subInfo setValue:path forKey:BE_filePath];
             [subInfo setValue:fileName forKey:BE_fileName];
+            [result addObject:subInfo];
         }
-        return subInfo;
+        return result;
     }
     return result;
 }
