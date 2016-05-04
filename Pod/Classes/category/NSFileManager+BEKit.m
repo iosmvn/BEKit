@@ -314,8 +314,8 @@
 + (unsigned long long)be_folderSizeAtPath:(NSString * _Nonnull)path {
     long long result = 0;
     NSFileManager *fileMgr = [[NSFileManager alloc] init];
-    BOOL isDir; //判断是否是为目录
-    if ([fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir) {//目录
+    BOOL isDir = [self be_isDirectory:path]; //判断是否是为目录
+    if (isDir) {//目录
         //获取当前目录下的所有文件
         NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
         for (NSString *fileName in subFileList) {
@@ -331,8 +331,8 @@
 + (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:0];
     NSFileManager *fileMgr = [NSFileManager defaultManager];
-    BOOL isDir; //判断是否是为目录
-    if ([fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir) {//目录
+    BOOL isDir = [self be_isDirectory:path]; //判断是否是为目录
+    if (isDir) {//目录
         //获取当前目录下的所有文件
         NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
         for (NSString *fileName in subFileList) {
@@ -353,6 +353,13 @@
         }
         return result;
     }
+    return result;
+}
+
++ (BOOL)be_isDirectory:(NSString * _Nonnull)path {
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    BOOL isDir; //判断是否是为目录
+    BOOL result = [fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir;
     return result;
 }
 

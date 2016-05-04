@@ -99,4 +99,6 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
 
 + (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path;
 
++ (BOOL)be_isDirectory:(NSString * _Nonnull)path;
+
 @end
