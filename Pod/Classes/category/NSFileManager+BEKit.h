@@ -97,4 +97,6 @@ NSString * const BE_filePath = @"BE_filePath_Key";
 
 + (unsigned long long)be_folderSizeAtPath:(NSString * _Nonnull)path;
 
++ (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path;
+
 @end
