@@ -311,7 +311,7 @@
     return result;
 }
 
-+ (unsigned long long)be_folderSizeAtDirectory:(NSString * _Nonnull)path {
++ (unsigned long long)be_folderSizeAtPath:(NSString * _Nonnull)path {
     long long result = 0;
     NSFileManager *fileMgr = [[NSFileManager alloc] init];
     BOOL isDir; //判断是否是为目录
