@@ -1,5 +1,5 @@
 PODS:
-  - BEKit (0.1.6):
+  - BEKit (0.3.1):
     - SDWebImage (~> 3.7.5)
   - Expecta (1.0.5)
   - Expecta+Snapshots (2.0.0):
@@ -10,9 +10,9 @@ PODS:
   - FBSnapshotTestCase/Core (2.0.7)
   - FBSnapshotTestCase/SwiftSupport (2.0.7):
     - FBSnapshotTestCase/Core
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
   - Specta (1.0.5)
 
 DEPENDENCIES:
@@ -28,11 +28,13 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BEKit: 69bc9cda04dc9573d1d4cfc7a77e829a8a4ea65c
+  BEKit: c155cebadbf9642e7202474a4c8b9a89706a8bb8
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d329b9d632f0aafe5a38fa4940af1cb8aaed2565
+
+COCOAPODS: 1.0.0

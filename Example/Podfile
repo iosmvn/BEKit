@@ -1,12 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'BEKit_Example', :exclusive => true do
+target 'BEKit_Example' do
   pod 'BEKit', :path => '../'
   pod 'SDWebImage', '~> 3.7.5'
 end
 
-target 'BEKit_Tests', :exclusive => true do
+target 'BEKit_Tests' do
   pod 'BEKit', :path => '../'
 
   pod 'Specta'

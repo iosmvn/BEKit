@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BEKit"
-  s.version          = "0.3.1"
+  s.version          = "0.3.2"
   s.summary          = "BEKit是基础扩展工具包（Base Extended Kit）核心代码."
 
 # This description is used to generate tags and improve search results.
@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'BEKit' => ['Pod/Assets/*']
-  }
+  # s.resource_bundles = {
+  #   'BEKit' => ['Pod/Assets/*']
+  # }
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
