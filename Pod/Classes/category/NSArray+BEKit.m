@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+BEKit.h"
+#import "NSObject+BEKit.h"
 
 @implementation NSArray (BEKit)
 
@@ -34,15 +35,23 @@
 }
 
 + (NSString * _Nonnull)be_arrayToJSON:(NSArray * _Nonnull)array {
-    NSString *json = nil;
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
-    if (!error) {
-        json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        return json;
-    } else {
-        return error.localizedDescription;
+    NSString * result = nil;
+    if ([array be_isValid]) {
+        @try {
+            NSError *e = nil;
+            NSData *d = [NSJSONSerialization dataWithJSONObject:array
+                                                        options:kNilOptions
+                                                          error:&e];
+            if ([d be_isValid] && e == nil) {
+                result = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+            }
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
     }
+    return result ? result : @"[]";
 }
 
 @end

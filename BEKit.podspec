@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "BEKit"
-  s.version          = "0.3.2"
+  s.version          = "0.3.3"
   s.summary          = "BEKit是基础扩展工具包（Base Extended Kit）核心代码."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
                         BEKit（Base Extended Kit）是一些基础功能代码、工具类、基类的集合，旨在快速实现基础功能。
                        DESC
@@ -37,5 +37,5 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'SDWebImage', '~> 3.7.5'
+  s.dependency 'SDWebImage', '~> 3.7.6'
 end

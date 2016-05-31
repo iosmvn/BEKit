@@ -268,4 +268,17 @@
     return size.height;
 }
 
+
+- (id _Nullable)be_stringToJSONObj {
+    id result = nil;
+    if ([self be_isValidString]) {
+        NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *e = nil;
+        result = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                 options:NSJSONReadingAllowFragments
+                                                   error:&e];
+    }
+    return result;
+}
+
 @end

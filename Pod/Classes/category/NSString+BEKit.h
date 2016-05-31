@@ -291,4 +291,6 @@
 - (CGFloat)be_heightForWidth:(float)width
                      andFont:(UIFont * _Nonnull)font;
 
+- (id _Nullable)be_stringToJSONObj;
+
 @end

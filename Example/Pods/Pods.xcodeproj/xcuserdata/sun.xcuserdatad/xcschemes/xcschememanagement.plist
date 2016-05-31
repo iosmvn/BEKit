@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BEKit-BEKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BEKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>48C97C47F724172AB27C5C4AEEB98059</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>619F0D28240534293108906FED04836F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>86866BB1F9854BED4067A47CC9019D10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>95F4094770AADB4EB4BB7848147CFD30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFED06D4D9DFBCC59CC6EC3CBD9B1670</key>
+		<key>BC80E11BC62560FECBB59F797138DC12</key>
 		<dict>
 			<key>primary</key>
 			<true/>

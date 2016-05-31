@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+BEKit.h"
+#import "NSObject+BEKit.h"
 
 @implementation NSDictionary (BEKit)
 
@@ -15,18 +16,23 @@
 }
 
 + (NSString * _Nonnull)be_dictionaryToJSON:(NSDictionary * _Nonnull)dictionary {
-    NSString *json = nil;
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
-    
-    if (!jsonData) {
-        return @"{}";
-    } else if (!error) {
-        json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        return json;
-    } else {
-        return error.localizedDescription;
+    NSString * result = nil;
+    if ([dictionary be_isValid]) {
+        @try {
+            NSError *e = nil;
+            NSData *d = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                        options:kNilOptions
+                                                          error:&e];
+            if ([d be_isValid] && e == nil) {
+                result = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+            }
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
     }
+    return result ? result : @"{}";
 }
 
 - (NSArray * _Nonnull)be_arrayObjectForKey:(NSString * _Nonnull)key {
