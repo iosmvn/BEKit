@@ -32,6 +32,4 @@
 
 - (void)be_setMaskImage:(UIImage * _Nonnull)image;
 
-- (void)be_setImgPath:(NSString * _Nonnull)imgPath placeholderImg:(UIImage * _Nonnull)img;
-
 @end

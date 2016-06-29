@@ -7,7 +7,6 @@
 //
 
 #import "UIImageView+BEKit.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation UIImageView (BEKit)
 
@@ -56,20 +55,6 @@
     mask.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     self.layer.mask = mask;
     self.layer.masksToBounds = YES;
-}
-
-- (void)be_setImgPath:(NSString *)imgPath placeholderImg:(UIImage *)img {
-    if (imgPath && ![@"" isEqualToString:imgPath]) {
-        NSURL *imgURL = nil;
-        if ([imgPath hasPrefix:@"http://"] || [imgPath hasPrefix:@"https://"]) {
-            imgURL = [NSURL URLWithString:imgPath];
-        } else {
-            imgURL = [NSURL fileURLWithPath:imgPath];
-        }
-        [self sd_setImageWithURL:imgURL placeholderImage:img];
-    } else {
-        self.image = img;
-    }
 }
 
 @end
