@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'BEKit_Example' do
   pod 'BEKit', :path => '../'
-  pod 'SDWebImage', '~> 3.7.5'
 end
 
 target 'BEKit_Tests' do

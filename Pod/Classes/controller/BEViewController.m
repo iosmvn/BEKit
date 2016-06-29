@@ -72,8 +72,9 @@
 }
 
 #pragma mark - Orientations
-- (BOOL)shouldAutorotate{
-    return UIInterfaceOrientationIsLandscape(self.interfaceOrientation);
+- (BOOL)shouldAutorotate {
+//    return UIInterfaceOrientationIsLandscape(self.interfaceOrientation);
+    return NO;
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
