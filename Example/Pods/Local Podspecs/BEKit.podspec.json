@@ -1,6 +1,6 @@
 {
   "name": "BEKit",
-  "version": "0.3.6",
+  "version": "0.4.1",
   "summary": "BEKit是基础扩展工具包（Base Extended Kit）核心代码.",
   "description": "BEKit（Base Extended Kit）是一些基础功能代码、工具类、基类的集合，旨在快速实现基础功能。",
   "homepage": "http://iospai.com",
@@ -10,12 +10,17 @@
   },
   "source": {
     "git": "https://github.com/iosmvn/BEKit.git",
-    "tag": "0.3.6"
+    "tag": "0.4.1"
   },
   "platforms": {
     "ios": "7.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "public_header_files": "Pod/Classes/**/*.h"
+  "public_header_files": "Pod/Classes/**/*.h",
+  "dependencies": {
+    "SDWebImage": [
+      "~> 4.0.0"
+    ]
+  }
 }

@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Specta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D888F29E05E498D0CD91A51D28599A5</key>
+		<key>33EE91899686DEA3E2A0A067BA6BF05B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17CE8EE57E48141A2A4E8A02FFB46D34</key>
+		<key>5B5EEC511E20635BFBD7644E1E290A5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2848FBE8B5D5C2555C824F7BEC1C1C8A</key>
+		<key>5D161BA711701D7E41E02A5702FD024E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B650D64E621B2A135DF4677656AEB5A</key>
+		<key>8FCEF633EC4B4276A80CA80F50FACBDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>619F0D28240534293108906FED04836F</key>
+		<key>B3CE224A1D3481FC396D6138B309F607</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0DF3E97D8D25226D5404DF63005FB3D</key>
+		<key>C1C346A3E0914D5A823C4DD92DFADDAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D07447EE3CEBB0BCB8D61DFCB8EA915F</key>
+		<key>D9F97695C5D44FFBA17A713E2871B3E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE2354FFF853FFEF1C1BD3D8FC3C9644</key>
 		<dict>
 			<key>primary</key>
 			<true/>

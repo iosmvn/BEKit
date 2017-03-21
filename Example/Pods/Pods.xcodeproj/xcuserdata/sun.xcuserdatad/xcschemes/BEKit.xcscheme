@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '17CE8EE57E48141A2A4E8A02FFB46D34'
+               BlueprintIdentifier = 'D9F97695C5D44FFBA17A713E2871B3E8'
                BlueprintName = 'BEKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BEKit.framework'>

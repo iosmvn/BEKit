@@ -1,4 +1,14 @@
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
 #import "BEKit.h"
 #import "NSArray+BEKit.h"
@@ -11,7 +21,6 @@
 #import "NSObject+BEKit.h"
 #import "NSString+BEKit.h"
 #import "NSThread+BEKit.h"
-#import "UIButton+BEKit.h"
 #import "UIColor+BEKit.h"
 #import "UIDevice+BEKit.h"
 #import "UIImage+BEKit.h"
@@ -19,14 +28,8 @@
 #import "UILabel+BEKit.h"
 #import "UINavigationBar+BEKit.h"
 #import "UIScreen+BEKit.h"
-#import "UIScrollView+BEKit.h"
-#import "UITableView+BEKit.h"
-#import "UITextField+BEKit.h"
-#import "UITextView+BEKit.h"
 #import "UIToolbar+BEKit.h"
 #import "UIView+BEKit.h"
-#import "UIWebView+BEKit.h"
-#import "UIWindow+BEKit.h"
 #import "BEAppDelegate.h"
 #import "BENavigationController.h"
 #import "BETabBarController.h"
