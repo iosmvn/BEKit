@@ -8,9 +8,6 @@
 
 @import Foundation;
 
-/**
- *  This category adds some useful methods to NSObject
- */
 @interface NSObject (BEKit)
 
 - (BOOL)be_isValid;

@@ -25,15 +25,6 @@
 + (NSString * _Nullable)be_MD5:(NSString * _Nonnull)string;
 
 /**
- *  Create a MD5 string from file
- *
- *  @param string The string to be converted
- *
- *  @return Returns the MD5 NSString
- */
-+ (NSString * _Nullable)be_fileMD5:(NSString * _Nonnull)filePath chunkSize:(size_t)chunkSize;
-
-/**
  *  Create a SHA1 string
  *
  *  @param string The string to be converted

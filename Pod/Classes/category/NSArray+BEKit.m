@@ -7,7 +7,6 @@
 //
 
 #import "NSArray+BEKit.h"
-#import "NSObject+BEKit.h"
 
 @implementation NSArray (BEKit)
 
@@ -24,10 +23,12 @@
 }
 
 + (NSArray * _Nonnull)be_reversedArray:(NSArray * _Nonnull)array {
-    NSMutableArray *arrayTemp = [NSMutableArray arrayWithCapacity:[array count]];
+    NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:[array count]];
     NSEnumerator *enumerator = [array reverseObjectEnumerator];
-    for (id element in enumerator) [arrayTemp addObject:element];
-    return arrayTemp;
+    for (id element in enumerator) {
+        [tmp addObject:element];
+    }
+    return tmp;
 }
 
 - (NSString * _Nonnull)be_arrayToJSON {
@@ -35,23 +36,15 @@
 }
 
 + (NSString * _Nonnull)be_arrayToJSON:(NSArray * _Nonnull)array {
-    NSString * result = nil;
-    if ([array be_isValid]) {
-        @try {
-            NSError *e = nil;
-            NSData *d = [NSJSONSerialization dataWithJSONObject:array
-                                                        options:kNilOptions
-                                                          error:&e];
-            if ([d be_isValid] && e == nil) {
-                result = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
-            }
-        } @catch (NSException *exception) {
-            
-        } @finally {
-            
-        }
+    NSString *json = nil;
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
+    if (data && !error) {
+        json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    } else {
+        json = @"[]";
     }
-    return result ? result : @"[]";
+    return json;
 }
 
 @end

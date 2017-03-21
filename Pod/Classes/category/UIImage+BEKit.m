@@ -81,48 +81,6 @@
     return [self be_blendMode:kCGBlendModeOverlay];
 }
 
-- (UIImage * _Nullable)be_maskWithImage:(UIImage * _Nonnull)image andSize:(CGSize)size {
-	CGContextRef mainViewContentContext;
-	CGColorSpaceRef colorSpace;
-	colorSpace = CGColorSpaceCreateDeviceRGB();
-	mainViewContentContext = CGBitmapContextCreate(NULL, size.width, size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-	CGColorSpaceRelease(colorSpace);
-	
-    if (mainViewContentContext == NULL) {
-        return nil;
-    }
-	
-	CGContextClipToMask(mainViewContentContext, CGRectMake(0, 0, size.width, size.height), image.CGImage);
-	CGContextDrawImage(mainViewContentContext, CGRectMake(0, 0, size.width, size.height), self.CGImage);
-	CGImageRef mainViewContentBitmapContext = CGBitmapContextCreateImage(mainViewContentContext);
-	CGContextRelease(mainViewContentContext);
-	UIImage *returnImage = [UIImage imageWithCGImage:mainViewContentBitmapContext];
-	CGImageRelease(mainViewContentBitmapContext);
-    
-	return returnImage;
-}
-
-- (UIImage * _Nullable)be_maskWithImage:(UIImage * _Nonnull)image {
-    CGContextRef context;
-    CGColorSpaceRef colorSpace;
-    colorSpace = CGColorSpaceCreateDeviceRGB();
-    context = CGBitmapContextCreate(NULL, self.size.width, self.size.height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
-    CGColorSpaceRelease(colorSpace);
-    
-    if (context == NULL) {
-        return NULL;
-    }
-    
-    CGContextClipToMask(context, CGRectMake(0, 0, self.size.width, self.size.height), image.CGImage);
-    CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
-    CGImageRef bitmapContext = CGBitmapContextCreateImage(context);
-    CGContextRelease(context);
-    UIImage *returnImage = [UIImage imageWithCGImage:bitmapContext];
-    CGImageRelease(bitmapContext);
-    
-    return returnImage;
-}
-
 - (UIImage * _Nonnull)be_imageAtRect:(CGRect)rect {
     CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], rect);
     UIImage *subImage = [UIImage imageWithCGImage:imageRef];

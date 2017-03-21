@@ -101,6 +101,10 @@
     return [self be_isValid] && self.length > 0;
 }
 
+- (BOOL)be_isValidHttpURL {
+    return [self be_isValidString] && ([[self lowercaseString] hasPrefix:@"http://"] || [[self lowercaseString] hasPrefix:@"https://"]);
+}
+
 - (BOOL)be_isEmail {
     return [NSString be_isEmail:self];
 }
@@ -266,19 +270,6 @@
         size = CGSizeMake(frame.size.width, frame.size.height + 1);
     }
     return size.height;
-}
-
-
-- (id _Nullable)be_stringToJSONObj {
-    id result = nil;
-    if ([self be_isValidString]) {
-        NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *e = nil;
-        result = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                 options:NSJSONReadingAllowFragments
-                                                   error:&e];
-    }
-    return result;
 }
 
 @end

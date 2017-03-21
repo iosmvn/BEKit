@@ -24,24 +24,24 @@ void ExtendNSLog(const char * _Nonnull file, int lineNumber, const char * _Nonnu
 /**
  *  Exented NSLog
  */
-#define BFLog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
+#define BELog(args ...) ExtendNSLog(__FILE__, __LINE__, __PRETTY_FUNCTION__, args);
 /**
  *  Log string
  */
-#define BFLogString [BFLog logString]
+#define BELogString [BELog logString]
 /**
  *  Detailed log string
  */
-#define BFLogDetailedString [BFLog logDetailedString]
+#define BELogDetailedString [BELog logDetailedString]
 /**
  *  Clear the log string
  */
-#define BFLogClear [BFLog clearLog]
+#define BELogClear [BELog clearLog]
 #else
-#define BFLog(args ...)
-#define BFLogString
-#define BFLogDetailedString
-#define BFLogClear
+#define BELog(args ...)
+#define BELogString
+#define BELogDetailedString
+#define BELogClear
 #endif
 
 + (void)clearLog;

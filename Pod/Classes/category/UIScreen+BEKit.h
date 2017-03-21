@@ -11,9 +11,6 @@
 #define BE_SCREEN_WIDTH [[UIScreen mainScreen] fixedScreenSize].width
 #define BE_SCREEN_HEIGHT [[UIScreen mainScreen] fixedScreenSize].height
 
-#define BE_SCREEN_MAX_LENGTH MAX(SCREEN_WIDTH, SCREEN_HEIGHT)
-#define BE_SCREEN_MIN_LENGTH MIN(SCREEN_WIDTH, SCREEN_HEIGHT)
-
 #define BE_IS_IPHONE_4_OR_LESS [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH < 568.0
 #define BE_IS_IPHONE_5 [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH == 568.0
 #define BE_IS_IPHONE_6 [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH == 667.0

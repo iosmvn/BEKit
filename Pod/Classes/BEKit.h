@@ -32,7 +32,6 @@
 #import "NSObject+BEKit.h"
 #import "NSString+BEKit.h"
 #import "NSThread+BEKit.h"
-#import "UIButton+BEKit.h"
 #import "UIColor+BEKit.h"
 #import "UIDevice+BEKit.h"
 #import "UIImage+BEKit.h"
@@ -40,19 +39,61 @@
 #import "UILabel+BEKit.h"
 #import "UINavigationBar+BEKit.h"
 #import "UIScreen+BEKit.h"
-#import "UIScrollView+BEKit.h"
-#import "UITableView+BEKit.h"
-#import "UITextField+BEKit.h"
-#import "UITextView+BEKit.h"
 #import "UIToolbar+BEKit.h"
 #import "UIView+BEKit.h"
-#import "UIWebView+BEKit.h"
-#import "UIWindow+BEKit.h"
 
 //ui
 #import "BEView.h"
 #import "BETextField.h"
 #import "BEImageView.h"
 #import "BETableViewCell.h"
+
+#define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+
+#define BFLocalizedString(key, comment) \
+[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BEKit"]
+
+//G－C－D
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+//单例化一个类
+#define BE_SINGLETON_FOR_CLASS(classname) \
+\
+static classname *shared##classname = nil; \
+\
++ (classname *)shared##classname \
+{ \
+@synchronized(self) \
+{ \
+if (shared##classname == nil) \
+{ \
+shared##classname = [[self alloc] init]; \
+} \
+} \
+\
+return shared##classname; \
+} \
+\
++ (id)allocWithZone:(NSZone *)zone \
+{ \
+@synchronized(self) \
+{ \
+if (shared##classname == nil) \
+{ \
+shared##classname = [super allocWithZone:zone]; \
+return shared##classname; \
+} \
+} \
+\
+return nil; \
+} \
+\
+- (id)copyWithZone:(NSZone *)zone \
+{ \
+return self; \
+}
 
 #endif /* BEKit_h */
