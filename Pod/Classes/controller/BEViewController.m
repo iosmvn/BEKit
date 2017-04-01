@@ -59,4 +59,13 @@
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:interfaceOrientation] forKey:@"orientation"];
 }
 
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    NSArray *ctrs = self.navigationController.viewControllers;
+    UIViewController *lastCtr = (UIViewController *)ctrs.lastObject;
+    if ([lastCtr isKindOfClass:[viewController class]]) {
+        return;
+    }
+    [self.navigationController pushViewController:viewController animated:animated];
+}
+
 @end

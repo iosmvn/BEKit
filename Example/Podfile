@@ -6,7 +6,7 @@ target 'BEKit_Example' do
 end
 
 target 'BEKit_Tests' do
-  pod 'SDWebImage', '~> 4.0.0'
+#  pod 'SDWebImage', '~> 4.0.0'
   pod 'BEKit', :path => '../'
 
   pod 'Specta'
