@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BEKit'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of BEKit.'
+  s.version          = "0.5.0"
+  s.summary          = "BEKit是基础扩展工具包（Base Extended Kit）核心代码."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,17 +18,18 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                        BEKit（Base Extended Kit）是一些基础功能代码、工具类、基类的集合，旨在快速实现基础功能。
                        DESC
 
-  s.homepage         = 'https://github.com/sundl1988@163.com/BEKit'
+  s.homepage         = "http://iospai.com"
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sundl1988@163.com' => 'sundanlong@gmail.com' }
-  s.source           = { :git => 'https://github.com/sundl1988@163.com/BEKit.git', :tag => s.version.to_s }
+  s.author           = { '孙丹龙' => 'sundanlong@gmail.com' }
+  s.source           = { :git => "https://github.com/iosmvn/BEKit.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
 
   s.source_files = 'BEKit/Classes/**/*'
   

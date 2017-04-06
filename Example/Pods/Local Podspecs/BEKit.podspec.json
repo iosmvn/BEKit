@@ -1,0 +1,22 @@
+{
+  "name": "BEKit",
+  "version": "0.1.0",
+  "summary": "A short description of BEKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sundl1988@163.com/BEKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sundl1988@163.com": "sundanlong@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sundl1988@163.com/BEKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BEKit/Classes/**/*"
+}
