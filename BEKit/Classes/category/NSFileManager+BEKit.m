@@ -57,6 +57,16 @@
     return [NSKeyedUnarchiver unarchiveObjectWithFile:_path];
 }
 
+//创建文件
++ (BOOL)be_createFileAtPath:(NSString * _Nonnull)fullPath {
+    BOOL result = YES;
+    NSFileManager *fileManager = [NSFileManager defaultManager];//创建文件管理器
+    if (![fileManager fileExistsAtPath:fullPath]) {//如果文件管理器中没有此文件则创建此文件
+        result = [fileManager createFileAtPath:fullPath contents:nil attributes:nil];
+    }
+    return result;
+}
+
 //创建文件夹
 + (BOOL)be_createDirectoryAtPath:(NSString * _Nonnull)fullPath {
     BOOL result = YES;
