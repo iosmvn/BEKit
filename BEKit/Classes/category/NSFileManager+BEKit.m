@@ -292,4 +292,75 @@
     return [self be_setSettings:BE_APP_NAME object:value forKey:objKey];
 }
 
++ (unsigned long long)be_fileSizeAtPath:(NSString * _Nonnull)path {
+    unsigned long long result = 0;
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    if ([fileMgr fileExistsAtPath:path]){
+        result = [[fileMgr attributesOfItemAtPath:path error:nil] fileSize];
+    }
+    return result;
+}
+
++ (unsigned long long)be_folderSizeAtPath:(NSString * _Nonnull)path {
+    long long result = 0;
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    BOOL isDir = [self be_isDirectory:path]; //判断是否是为目录
+    if (isDir) {//目录
+        //获取当前目录下的所有文件
+        NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
+        for (NSString *fileName in subFileList) {
+            result += [self be_folderSizeAtPath:[path stringByAppendingPathComponent:fileName]];
+        }
+    } else {//文件
+        //获取文件属性
+        return [self be_fileSizeAtPath:path];
+    }
+    return result;
+}
+
++ (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path {
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:0];
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    BOOL isDir = [self be_isDirectory:path]; //判断是否是为目录
+    if (isDir) {//目录
+        //获取当前目录下的所有文件
+        NSArray *subFileList = [fileMgr contentsOfDirectoryAtPath:path error:nil];
+        for (NSString *fileName in subFileList) {
+            NSArray *tmpList = [self be_getAllFileInfoAtPath:[path stringByAppendingPathComponent:fileName]];
+            if (tmpList && [tmpList count] > 0) {
+                [result addObjectsFromArray:tmpList];
+            }
+        }
+    } else {//文件
+        if ([fileMgr fileExistsAtPath:path]) {
+            NSString *fileName = [[path componentsSeparatedByString:@"/"] lastObject];
+            //获取文件属性
+            NSDictionary *fileAttributes = [fileMgr attributesOfItemAtPath:path error:nil];
+            NSMutableDictionary *subInfo = [NSMutableDictionary dictionaryWithDictionary:fileAttributes];
+            [subInfo setValue:path forKey:BE_filePath];
+            [subInfo setValue:fileName forKey:BE_fileName];
+            [result addObject:subInfo];
+        }
+        return result;
+    }
+    return result;
+}
+
++ (BOOL)be_isDirectory:(NSString * _Nonnull)path {
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    BOOL isDir; //判断是否是为目录
+    BOOL result = [fileMgr fileExistsAtPath:path isDirectory:&isDir] && isDir;
+    return result;
+}
+
++ (NSDate * _Nullable)be_getFileCreateTime:(NSString * _Nonnull)path {
+    NSDate *result = nil;
+    NSFileManager *fileMgr = [[NSFileManager alloc] init];
+    NSDictionary *fileAttributes = [fileMgr attributesOfItemAtPath:path error:nil];
+    if (fileAttributes) {
+        result = [fileAttributes objectForKey:NSFileCreationDate];
+    }
+    return result;
+}
+
 @end

@@ -30,6 +30,9 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
     DirectoryTypeCache
 };
 
+#define BE_fileName @"BE_fileName_Key"
+#define BE_filePath @"BE_filePath_Key"
+
 @interface NSFileManager (BEKit)
 
 + (NSString * _Nullable)be_readTextFile:(NSString * _Nonnull)file
@@ -85,6 +88,16 @@ typedef NS_ENUM(NSInteger, DirectoryType) {
 
 + (BOOL)be_setSettings:(NSString * _Nonnull)settings
              object:(id _Nonnull)value
-             forKey:(NSString * _Nonnull)objKey;
+                forKey:(NSString * _Nonnull)objKey;
+
++ (unsigned long long)be_fileSizeAtPath:(NSString * _Nonnull)path;
+
++ (unsigned long long)be_folderSizeAtPath:(NSString * _Nonnull)path;
+
++ (NSMutableArray * _Nonnull)be_getAllFileInfoAtPath:(NSString * _Nonnull)path;
+
++ (BOOL)be_isDirectory:(NSString * _Nonnull)path;
+
++ (NSDate * _Nullable)be_getFileCreateTime:(NSString * _Nonnull)path;
 
 @end
