@@ -22,6 +22,73 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		A42EA6041F20B10800F8838F /* BEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EA5FB1F20B10700F8838F /* BEKit.framework */; };
+		A42EA60B1F20B10800F8838F /* BEKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA60A1F20B10800F8838F /* BEKitTests.m */; };
+		A42EA6101F20B10800F8838F /* BEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EA5FB1F20B10700F8838F /* BEKit.framework */; };
+		A42EA6111F20B10800F8838F /* BEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A42EA5FB1F20B10700F8838F /* BEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A42EA65C1F20B13D00F8838F /* BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6191F20B13D00F8838F /* BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA65D1F20B13D00F8838F /* NSArray+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA61B1F20B13D00F8838F /* NSArray+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA65E1F20B13D00F8838F /* NSArray+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA61C1F20B13D00F8838F /* NSArray+BEKit.m */; };
+		A42EA65F1F20B13D00F8838F /* NSData+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA61D1F20B13D00F8838F /* NSData+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6601F20B13D00F8838F /* NSData+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA61E1F20B13D00F8838F /* NSData+BEKit.m */; };
+		A42EA6611F20B13D00F8838F /* NSDate+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA61F1F20B13D00F8838F /* NSDate+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6621F20B13D00F8838F /* NSDate+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6201F20B13D00F8838F /* NSDate+BEKit.m */; };
+		A42EA6631F20B13D00F8838F /* NSDictionary+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6211F20B13D00F8838F /* NSDictionary+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6641F20B13D00F8838F /* NSDictionary+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6221F20B13D00F8838F /* NSDictionary+BEKit.m */; };
+		A42EA6651F20B13D00F8838F /* NSFileManager+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6231F20B13D00F8838F /* NSFileManager+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6661F20B13D00F8838F /* NSFileManager+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6241F20B13D00F8838F /* NSFileManager+BEKit.m */; };
+		A42EA6671F20B13D00F8838F /* NSMutableArray+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6251F20B13D00F8838F /* NSMutableArray+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6681F20B13D00F8838F /* NSMutableArray+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6261F20B13D00F8838F /* NSMutableArray+BEKit.m */; };
+		A42EA6691F20B13D00F8838F /* NSNumber+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6271F20B13D00F8838F /* NSNumber+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA66A1F20B13D00F8838F /* NSNumber+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6281F20B13D00F8838F /* NSNumber+BEKit.m */; };
+		A42EA66B1F20B13D00F8838F /* NSObject+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6291F20B13D00F8838F /* NSObject+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA66C1F20B13D00F8838F /* NSObject+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA62A1F20B13D00F8838F /* NSObject+BEKit.m */; };
+		A42EA66D1F20B13D00F8838F /* NSString+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA62B1F20B13D00F8838F /* NSString+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA66E1F20B13D00F8838F /* NSString+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA62C1F20B13D00F8838F /* NSString+BEKit.m */; };
+		A42EA66F1F20B13D00F8838F /* NSThread+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA62D1F20B13D00F8838F /* NSThread+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6701F20B13D00F8838F /* NSThread+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA62E1F20B13D00F8838F /* NSThread+BEKit.m */; };
+		A42EA6711F20B13D00F8838F /* UIColor+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA62F1F20B13D00F8838F /* UIColor+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6721F20B13D00F8838F /* UIColor+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6301F20B13D00F8838F /* UIColor+BEKit.m */; };
+		A42EA6731F20B13D00F8838F /* UIDevice+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6311F20B13D00F8838F /* UIDevice+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6741F20B13D00F8838F /* UIDevice+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6321F20B13D00F8838F /* UIDevice+BEKit.m */; };
+		A42EA6751F20B13D00F8838F /* UIImage+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6331F20B13D00F8838F /* UIImage+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6761F20B13D00F8838F /* UIImage+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6341F20B13D00F8838F /* UIImage+BEKit.m */; };
+		A42EA6771F20B13D00F8838F /* UIImageView+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6351F20B13D00F8838F /* UIImageView+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6781F20B13D00F8838F /* UIImageView+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6361F20B13D00F8838F /* UIImageView+BEKit.m */; };
+		A42EA6791F20B13D00F8838F /* UILabel+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6371F20B13D00F8838F /* UILabel+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA67A1F20B13D00F8838F /* UILabel+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6381F20B13D00F8838F /* UILabel+BEKit.m */; };
+		A42EA67B1F20B13D00F8838F /* UINavigationBar+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6391F20B13D00F8838F /* UINavigationBar+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA67C1F20B13D00F8838F /* UINavigationBar+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA63A1F20B13D00F8838F /* UINavigationBar+BEKit.m */; };
+		A42EA67D1F20B13D00F8838F /* UIScreen+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA63B1F20B13D00F8838F /* UIScreen+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA67E1F20B13D00F8838F /* UIScreen+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA63C1F20B13D00F8838F /* UIScreen+BEKit.m */; };
+		A42EA67F1F20B13D00F8838F /* UIToolbar+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA63D1F20B13D00F8838F /* UIToolbar+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6801F20B13D00F8838F /* UIToolbar+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA63E1F20B13D00F8838F /* UIToolbar+BEKit.m */; };
+		A42EA6811F20B13D00F8838F /* UIView+BEKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA63F1F20B13D00F8838F /* UIView+BEKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6821F20B13D00F8838F /* UIView+BEKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6401F20B13D00F8838F /* UIView+BEKit.m */; };
+		A42EA6831F20B13D00F8838F /* BEAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6421F20B13D00F8838F /* BEAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6841F20B13D00F8838F /* BEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6431F20B13D00F8838F /* BEAppDelegate.m */; };
+		A42EA6851F20B13D00F8838F /* BENavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6441F20B13D00F8838F /* BENavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6861F20B13D00F8838F /* BENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6451F20B13D00F8838F /* BENavigationController.m */; };
+		A42EA6871F20B13D00F8838F /* BETabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6461F20B13D00F8838F /* BETabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6881F20B13D00F8838F /* BETabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6471F20B13D00F8838F /* BETabBarController.m */; };
+		A42EA6891F20B13D00F8838F /* BEViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6481F20B13D00F8838F /* BEViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA68A1F20B13D00F8838F /* BEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6491F20B13D00F8838F /* BEViewController.m */; };
+		A42EA68B1F20B13D00F8838F /* BEImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA64B1F20B13D00F8838F /* BEImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA68C1F20B13D00F8838F /* BEImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA64C1F20B13D00F8838F /* BEImageView.m */; };
+		A42EA68D1F20B13D00F8838F /* BETableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA64D1F20B13D00F8838F /* BETableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA68E1F20B13D00F8838F /* BETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA64E1F20B13D00F8838F /* BETableViewCell.m */; };
+		A42EA68F1F20B13D00F8838F /* BETextField.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA64F1F20B13D00F8838F /* BETextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6901F20B13D00F8838F /* BETextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6501F20B13D00F8838F /* BETextField.m */; };
+		A42EA6911F20B13D00F8838F /* BEView.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6511F20B13D00F8838F /* BEView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6921F20B13D00F8838F /* BEView.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6521F20B13D00F8838F /* BEView.m */; };
+		A42EA6931F20B13D00F8838F /* BEConfigUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6541F20B13D00F8838F /* BEConfigUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6941F20B13D00F8838F /* BEConfigUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6551F20B13D00F8838F /* BEConfigUtil.m */; };
+		A42EA6951F20B13D00F8838F /* BECryptographyUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6561F20B13D00F8838F /* BECryptographyUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6961F20B13D00F8838F /* BECryptographyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6571F20B13D00F8838F /* BECryptographyUtil.m */; };
+		A42EA6971F20B13D00F8838F /* BELog.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA6581F20B13D00F8838F /* BELog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA6981F20B13D00F8838F /* BELog.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA6591F20B13D00F8838F /* BELog.m */; };
+		A42EA6991F20B13D00F8838F /* BESystemSound.h in Headers */ = {isa = PBXBuildFile; fileRef = A42EA65A1F20B13D00F8838F /* BESystemSound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42EA69A1F20B13D00F8838F /* BESystemSound.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA65B1F20B13D00F8838F /* BESystemSound.m */; };
 		C8C1DE555626A6CD367EF3E0 /* Pods_BEKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A18EB86441AEBDF3FE6C39 /* Pods_BEKit_Example.framework */; };
 		E1C0CA4A38610FD290CB61EE /* Pods_BEKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C6A9109379BA658DA9D89 /* Pods_BEKit_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +101,42 @@
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = BEKit;
 		};
+		A42EA6051F20B10800F8838F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A42EA5FA1F20B10700F8838F;
+			remoteInfo = BEKit;
+		};
+		A42EA6071F20B10800F8838F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = BEKit_Example;
+		};
+		A42EA60E1F20B10800F8838F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A42EA5FA1F20B10700F8838F;
+			remoteInfo = BEKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A42EA6171F20B10800F8838F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A42EA6111F20B10800F8838F /* BEKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		27A18EB86441AEBDF3FE6C39 /* Pods_BEKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +165,74 @@
 		62DA34424915AA0085583A07 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A42EA5FB1F20B10700F8838F /* BEKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BEKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42EA5FE1F20B10700F8838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42EA6031F20B10800F8838F /* BEKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BEKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42EA60A1F20B10800F8838F /* BEKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BEKitTests.m; sourceTree = "<group>"; };
+		A42EA60C1F20B10800F8838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42EA6191F20B13D00F8838F /* BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BEKit.h; path = ../../BEKit/Classes/BEKit.h; sourceTree = "<group>"; };
+		A42EA61B1F20B13D00F8838F /* NSArray+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BEKit.h"; sourceTree = "<group>"; };
+		A42EA61C1F20B13D00F8838F /* NSArray+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BEKit.m"; sourceTree = "<group>"; };
+		A42EA61D1F20B13D00F8838F /* NSData+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BEKit.h"; sourceTree = "<group>"; };
+		A42EA61E1F20B13D00F8838F /* NSData+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BEKit.m"; sourceTree = "<group>"; };
+		A42EA61F1F20B13D00F8838F /* NSDate+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6201F20B13D00F8838F /* NSDate+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6211F20B13D00F8838F /* NSDictionary+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6221F20B13D00F8838F /* NSDictionary+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6231F20B13D00F8838F /* NSFileManager+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6241F20B13D00F8838F /* NSFileManager+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6251F20B13D00F8838F /* NSMutableArray+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6261F20B13D00F8838F /* NSMutableArray+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6271F20B13D00F8838F /* NSNumber+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6281F20B13D00F8838F /* NSNumber+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6291F20B13D00F8838F /* NSObject+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BEKit.h"; sourceTree = "<group>"; };
+		A42EA62A1F20B13D00F8838F /* NSObject+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BEKit.m"; sourceTree = "<group>"; };
+		A42EA62B1F20B13D00F8838F /* NSString+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BEKit.h"; sourceTree = "<group>"; };
+		A42EA62C1F20B13D00F8838F /* NSString+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BEKit.m"; sourceTree = "<group>"; };
+		A42EA62D1F20B13D00F8838F /* NSThread+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+BEKit.h"; sourceTree = "<group>"; };
+		A42EA62E1F20B13D00F8838F /* NSThread+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+BEKit.m"; sourceTree = "<group>"; };
+		A42EA62F1F20B13D00F8838F /* UIColor+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6301F20B13D00F8838F /* UIColor+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6311F20B13D00F8838F /* UIDevice+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6321F20B13D00F8838F /* UIDevice+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6331F20B13D00F8838F /* UIImage+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6341F20B13D00F8838F /* UIImage+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6351F20B13D00F8838F /* UIImageView+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6361F20B13D00F8838F /* UIImageView+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6371F20B13D00F8838F /* UILabel+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6381F20B13D00F8838F /* UILabel+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6391F20B13D00F8838F /* UINavigationBar+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BEKit.h"; sourceTree = "<group>"; };
+		A42EA63A1F20B13D00F8838F /* UINavigationBar+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BEKit.m"; sourceTree = "<group>"; };
+		A42EA63B1F20B13D00F8838F /* UIScreen+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+BEKit.h"; sourceTree = "<group>"; };
+		A42EA63C1F20B13D00F8838F /* UIScreen+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+BEKit.m"; sourceTree = "<group>"; };
+		A42EA63D1F20B13D00F8838F /* UIToolbar+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+BEKit.h"; sourceTree = "<group>"; };
+		A42EA63E1F20B13D00F8838F /* UIToolbar+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+BEKit.m"; sourceTree = "<group>"; };
+		A42EA63F1F20B13D00F8838F /* UIView+BEKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BEKit.h"; sourceTree = "<group>"; };
+		A42EA6401F20B13D00F8838F /* UIView+BEKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BEKit.m"; sourceTree = "<group>"; };
+		A42EA6421F20B13D00F8838F /* BEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEAppDelegate.h; sourceTree = "<group>"; };
+		A42EA6431F20B13D00F8838F /* BEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEAppDelegate.m; sourceTree = "<group>"; };
+		A42EA6441F20B13D00F8838F /* BENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BENavigationController.h; sourceTree = "<group>"; };
+		A42EA6451F20B13D00F8838F /* BENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BENavigationController.m; sourceTree = "<group>"; };
+		A42EA6461F20B13D00F8838F /* BETabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BETabBarController.h; sourceTree = "<group>"; };
+		A42EA6471F20B13D00F8838F /* BETabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BETabBarController.m; sourceTree = "<group>"; };
+		A42EA6481F20B13D00F8838F /* BEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEViewController.h; sourceTree = "<group>"; };
+		A42EA6491F20B13D00F8838F /* BEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEViewController.m; sourceTree = "<group>"; };
+		A42EA64B1F20B13D00F8838F /* BEImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEImageView.h; sourceTree = "<group>"; };
+		A42EA64C1F20B13D00F8838F /* BEImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEImageView.m; sourceTree = "<group>"; };
+		A42EA64D1F20B13D00F8838F /* BETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BETableViewCell.h; sourceTree = "<group>"; };
+		A42EA64E1F20B13D00F8838F /* BETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BETableViewCell.m; sourceTree = "<group>"; };
+		A42EA64F1F20B13D00F8838F /* BETextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BETextField.h; sourceTree = "<group>"; };
+		A42EA6501F20B13D00F8838F /* BETextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BETextField.m; sourceTree = "<group>"; };
+		A42EA6511F20B13D00F8838F /* BEView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEView.h; sourceTree = "<group>"; };
+		A42EA6521F20B13D00F8838F /* BEView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEView.m; sourceTree = "<group>"; };
+		A42EA6541F20B13D00F8838F /* BEConfigUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEConfigUtil.h; sourceTree = "<group>"; };
+		A42EA6551F20B13D00F8838F /* BEConfigUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEConfigUtil.m; sourceTree = "<group>"; };
+		A42EA6561F20B13D00F8838F /* BECryptographyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BECryptographyUtil.h; sourceTree = "<group>"; };
+		A42EA6571F20B13D00F8838F /* BECryptographyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BECryptographyUtil.m; sourceTree = "<group>"; };
+		A42EA6581F20B13D00F8838F /* BELog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BELog.h; sourceTree = "<group>"; };
+		A42EA6591F20B13D00F8838F /* BELog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BELog.m; sourceTree = "<group>"; };
+		A42EA65A1F20B13D00F8838F /* BESystemSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BESystemSound.h; sourceTree = "<group>"; };
+		A42EA65B1F20B13D00F8838F /* BESystemSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BESystemSound.m; sourceTree = "<group>"; };
 		AD36FCE4DCB8E75E4171C4F4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B73DD62856EB7C53F17845E5 /* Pods-BEKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BEKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BEKit_Tests/Pods-BEKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F58C6A9109379BA658DA9D89 /* Pods_BEKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BEKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +247,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				A42EA6101F20B10800F8838F /* BEKit.framework in Frameworks */,
 				C8C1DE555626A6CD367EF3E0 /* Pods_BEKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +260,21 @@
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
 				E1C0CA4A38610FD290CB61EE /* Pods_BEKit_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42EA5F71F20B10700F8838F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42EA6001F20B10800F8838F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A42EA6041F20B10800F8838F /* BEKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +298,8 @@
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for BEKit */,
 				6003F5B5195388D20070C39A /* Tests */,
+				A42EA5FC1F20B10700F8838F /* BEKit */,
+				A42EA6091F20B10800F8838F /* BEKitTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				55537356FAA4736285FF119C /* Pods */,
@@ -123,6 +311,8 @@
 			children = (
 				6003F58A195388D20070C39A /* BEKit_Example.app */,
 				6003F5AE195388D20070C39A /* BEKit_Tests.xctest */,
+				A42EA5FB1F20B10700F8838F /* BEKit.framework */,
+				A42EA6031F20B10800F8838F /* BEKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,7 +386,165 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		A42EA5FC1F20B10700F8838F /* BEKit */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA6191F20B13D00F8838F /* BEKit.h */,
+				A42EA61A1F20B13D00F8838F /* category */,
+				A42EA6411F20B13D00F8838F /* controller */,
+				A42EA64A1F20B13D00F8838F /* ui */,
+				A42EA6531F20B13D00F8838F /* util */,
+				A42EA5FE1F20B10700F8838F /* Info.plist */,
+			);
+			path = BEKit;
+			sourceTree = "<group>";
+		};
+		A42EA6091F20B10800F8838F /* BEKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA60A1F20B10800F8838F /* BEKitTests.m */,
+				A42EA60C1F20B10800F8838F /* Info.plist */,
+			);
+			path = BEKitTests;
+			sourceTree = "<group>";
+		};
+		A42EA61A1F20B13D00F8838F /* category */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA61B1F20B13D00F8838F /* NSArray+BEKit.h */,
+				A42EA61C1F20B13D00F8838F /* NSArray+BEKit.m */,
+				A42EA61D1F20B13D00F8838F /* NSData+BEKit.h */,
+				A42EA61E1F20B13D00F8838F /* NSData+BEKit.m */,
+				A42EA61F1F20B13D00F8838F /* NSDate+BEKit.h */,
+				A42EA6201F20B13D00F8838F /* NSDate+BEKit.m */,
+				A42EA6211F20B13D00F8838F /* NSDictionary+BEKit.h */,
+				A42EA6221F20B13D00F8838F /* NSDictionary+BEKit.m */,
+				A42EA6231F20B13D00F8838F /* NSFileManager+BEKit.h */,
+				A42EA6241F20B13D00F8838F /* NSFileManager+BEKit.m */,
+				A42EA6251F20B13D00F8838F /* NSMutableArray+BEKit.h */,
+				A42EA6261F20B13D00F8838F /* NSMutableArray+BEKit.m */,
+				A42EA6271F20B13D00F8838F /* NSNumber+BEKit.h */,
+				A42EA6281F20B13D00F8838F /* NSNumber+BEKit.m */,
+				A42EA6291F20B13D00F8838F /* NSObject+BEKit.h */,
+				A42EA62A1F20B13D00F8838F /* NSObject+BEKit.m */,
+				A42EA62B1F20B13D00F8838F /* NSString+BEKit.h */,
+				A42EA62C1F20B13D00F8838F /* NSString+BEKit.m */,
+				A42EA62D1F20B13D00F8838F /* NSThread+BEKit.h */,
+				A42EA62E1F20B13D00F8838F /* NSThread+BEKit.m */,
+				A42EA62F1F20B13D00F8838F /* UIColor+BEKit.h */,
+				A42EA6301F20B13D00F8838F /* UIColor+BEKit.m */,
+				A42EA6311F20B13D00F8838F /* UIDevice+BEKit.h */,
+				A42EA6321F20B13D00F8838F /* UIDevice+BEKit.m */,
+				A42EA6331F20B13D00F8838F /* UIImage+BEKit.h */,
+				A42EA6341F20B13D00F8838F /* UIImage+BEKit.m */,
+				A42EA6351F20B13D00F8838F /* UIImageView+BEKit.h */,
+				A42EA6361F20B13D00F8838F /* UIImageView+BEKit.m */,
+				A42EA6371F20B13D00F8838F /* UILabel+BEKit.h */,
+				A42EA6381F20B13D00F8838F /* UILabel+BEKit.m */,
+				A42EA6391F20B13D00F8838F /* UINavigationBar+BEKit.h */,
+				A42EA63A1F20B13D00F8838F /* UINavigationBar+BEKit.m */,
+				A42EA63B1F20B13D00F8838F /* UIScreen+BEKit.h */,
+				A42EA63C1F20B13D00F8838F /* UIScreen+BEKit.m */,
+				A42EA63D1F20B13D00F8838F /* UIToolbar+BEKit.h */,
+				A42EA63E1F20B13D00F8838F /* UIToolbar+BEKit.m */,
+				A42EA63F1F20B13D00F8838F /* UIView+BEKit.h */,
+				A42EA6401F20B13D00F8838F /* UIView+BEKit.m */,
+			);
+			name = category;
+			path = ../../BEKit/Classes/category;
+			sourceTree = "<group>";
+		};
+		A42EA6411F20B13D00F8838F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA6421F20B13D00F8838F /* BEAppDelegate.h */,
+				A42EA6431F20B13D00F8838F /* BEAppDelegate.m */,
+				A42EA6441F20B13D00F8838F /* BENavigationController.h */,
+				A42EA6451F20B13D00F8838F /* BENavigationController.m */,
+				A42EA6461F20B13D00F8838F /* BETabBarController.h */,
+				A42EA6471F20B13D00F8838F /* BETabBarController.m */,
+				A42EA6481F20B13D00F8838F /* BEViewController.h */,
+				A42EA6491F20B13D00F8838F /* BEViewController.m */,
+			);
+			name = controller;
+			path = ../../BEKit/Classes/controller;
+			sourceTree = "<group>";
+		};
+		A42EA64A1F20B13D00F8838F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA64B1F20B13D00F8838F /* BEImageView.h */,
+				A42EA64C1F20B13D00F8838F /* BEImageView.m */,
+				A42EA64D1F20B13D00F8838F /* BETableViewCell.h */,
+				A42EA64E1F20B13D00F8838F /* BETableViewCell.m */,
+				A42EA64F1F20B13D00F8838F /* BETextField.h */,
+				A42EA6501F20B13D00F8838F /* BETextField.m */,
+				A42EA6511F20B13D00F8838F /* BEView.h */,
+				A42EA6521F20B13D00F8838F /* BEView.m */,
+			);
+			name = ui;
+			path = ../../BEKit/Classes/ui;
+			sourceTree = "<group>";
+		};
+		A42EA6531F20B13D00F8838F /* util */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA6541F20B13D00F8838F /* BEConfigUtil.h */,
+				A42EA6551F20B13D00F8838F /* BEConfigUtil.m */,
+				A42EA6561F20B13D00F8838F /* BECryptographyUtil.h */,
+				A42EA6571F20B13D00F8838F /* BECryptographyUtil.m */,
+				A42EA6581F20B13D00F8838F /* BELog.h */,
+				A42EA6591F20B13D00F8838F /* BELog.m */,
+				A42EA65A1F20B13D00F8838F /* BESystemSound.h */,
+				A42EA65B1F20B13D00F8838F /* BESystemSound.m */,
+			);
+			name = util;
+			path = ../../BEKit/Classes/util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A42EA5F81F20B10700F8838F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A42EA6751F20B13D00F8838F /* UIImage+BEKit.h in Headers */,
+				A42EA6671F20B13D00F8838F /* NSMutableArray+BEKit.h in Headers */,
+				A42EA6631F20B13D00F8838F /* NSDictionary+BEKit.h in Headers */,
+				A42EA6811F20B13D00F8838F /* UIView+BEKit.h in Headers */,
+				A42EA66F1F20B13D00F8838F /* NSThread+BEKit.h in Headers */,
+				A42EA6831F20B13D00F8838F /* BEAppDelegate.h in Headers */,
+				A42EA6731F20B13D00F8838F /* UIDevice+BEKit.h in Headers */,
+				A42EA6971F20B13D00F8838F /* BELog.h in Headers */,
+				A42EA6871F20B13D00F8838F /* BETabBarController.h in Headers */,
+				A42EA66D1F20B13D00F8838F /* NSString+BEKit.h in Headers */,
+				A42EA6691F20B13D00F8838F /* NSNumber+BEKit.h in Headers */,
+				A42EA6851F20B13D00F8838F /* BENavigationController.h in Headers */,
+				A42EA68D1F20B13D00F8838F /* BETableViewCell.h in Headers */,
+				A42EA6931F20B13D00F8838F /* BEConfigUtil.h in Headers */,
+				A42EA6911F20B13D00F8838F /* BEView.h in Headers */,
+				A42EA6771F20B13D00F8838F /* UIImageView+BEKit.h in Headers */,
+				A42EA65C1F20B13D00F8838F /* BEKit.h in Headers */,
+				A42EA66B1F20B13D00F8838F /* NSObject+BEKit.h in Headers */,
+				A42EA6891F20B13D00F8838F /* BEViewController.h in Headers */,
+				A42EA68F1F20B13D00F8838F /* BETextField.h in Headers */,
+				A42EA6611F20B13D00F8838F /* NSDate+BEKit.h in Headers */,
+				A42EA6711F20B13D00F8838F /* UIColor+BEKit.h in Headers */,
+				A42EA68B1F20B13D00F8838F /* BEImageView.h in Headers */,
+				A42EA6651F20B13D00F8838F /* NSFileManager+BEKit.h in Headers */,
+				A42EA67B1F20B13D00F8838F /* UINavigationBar+BEKit.h in Headers */,
+				A42EA67F1F20B13D00F8838F /* UIToolbar+BEKit.h in Headers */,
+				A42EA6991F20B13D00F8838F /* BESystemSound.h in Headers */,
+				A42EA6951F20B13D00F8838F /* BECryptographyUtil.h in Headers */,
+				A42EA6791F20B13D00F8838F /* UILabel+BEKit.h in Headers */,
+				A42EA65D1F20B13D00F8838F /* NSArray+BEKit.h in Headers */,
+				A42EA67D1F20B13D00F8838F /* UIScreen+BEKit.h in Headers */,
+				A42EA65F1F20B13D00F8838F /* NSData+BEKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6003F589195388D20070C39A /* BEKit_Example */ = {
@@ -209,10 +557,12 @@
 				6003F588195388D20070C39A /* Resources */,
 				DB69F952AB052A2C62B190F6 /* [CP] Embed Pods Frameworks */,
 				EA35E65A263F68DC937C8046 /* [CP] Copy Pods Resources */,
+				A42EA6171F20B10800F8838F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A42EA60F1F20B10800F8838F /* PBXTargetDependency */,
 			);
 			name = BEKit_Example;
 			productName = BEKit;
@@ -240,6 +590,43 @@
 			productReference = 6003F5AE195388D20070C39A /* BEKit_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A42EA5FA1F20B10700F8838F /* BEKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A42EA6161F20B10800F8838F /* Build configuration list for PBXNativeTarget "BEKit" */;
+			buildPhases = (
+				A42EA5F61F20B10700F8838F /* Sources */,
+				A42EA5F71F20B10700F8838F /* Frameworks */,
+				A42EA5F81F20B10700F8838F /* Headers */,
+				A42EA5F91F20B10700F8838F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BEKit;
+			productName = BEKit;
+			productReference = A42EA5FB1F20B10700F8838F /* BEKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A42EA6021F20B10800F8838F /* BEKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A42EA6181F20B10800F8838F /* Build configuration list for PBXNativeTarget "BEKitTests" */;
+			buildPhases = (
+				A42EA5FF1F20B10800F8838F /* Sources */,
+				A42EA6001F20B10800F8838F /* Frameworks */,
+				A42EA6011F20B10800F8838F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A42EA6061F20B10800F8838F /* PBXTargetDependency */,
+				A42EA6081F20B10800F8838F /* PBXTargetDependency */,
+			);
+			name = BEKitTests;
+			productName = BEKitTests;
+			productReference = A42EA6031F20B10800F8838F /* BEKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,6 +641,16 @@
 						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+					A42EA5FA1F20B10700F8838F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					A42EA6021F20B10800F8838F = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GZ8YSWMN46;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -273,6 +670,8 @@
 			targets = (
 				6003F589195388D20070C39A /* BEKit_Example */,
 				6003F5AD195388D20070C39A /* BEKit_Tests */,
+				A42EA5FA1F20B10700F8838F /* BEKit */,
+				A42EA6021F20B10800F8838F /* BEKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +696,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A42EA5F91F20B10700F8838F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42EA6011F20B10800F8838F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -312,7 +725,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ADAB27360EDA105B903A10F4 /* [CP] Copy Pods Resources */ = {
@@ -342,7 +755,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D3CC322C5EA66CB97DBBB2FE /* [CP] Embed Pods Frameworks */ = {
@@ -411,6 +824,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A42EA5F61F20B10700F8838F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A42EA6941F20B13D00F8838F /* BEConfigUtil.m in Sources */,
+				A42EA6861F20B13D00F8838F /* BENavigationController.m in Sources */,
+				A42EA66A1F20B13D00F8838F /* NSNumber+BEKit.m in Sources */,
+				A42EA6641F20B13D00F8838F /* NSDictionary+BEKit.m in Sources */,
+				A42EA6821F20B13D00F8838F /* UIView+BEKit.m in Sources */,
+				A42EA6681F20B13D00F8838F /* NSMutableArray+BEKit.m in Sources */,
+				A42EA6761F20B13D00F8838F /* UIImage+BEKit.m in Sources */,
+				A42EA6841F20B13D00F8838F /* BEAppDelegate.m in Sources */,
+				A42EA6721F20B13D00F8838F /* UIColor+BEKit.m in Sources */,
+				A42EA6801F20B13D00F8838F /* UIToolbar+BEKit.m in Sources */,
+				A42EA66E1F20B13D00F8838F /* NSString+BEKit.m in Sources */,
+				A42EA6901F20B13D00F8838F /* BETextField.m in Sources */,
+				A42EA68E1F20B13D00F8838F /* BETableViewCell.m in Sources */,
+				A42EA6701F20B13D00F8838F /* NSThread+BEKit.m in Sources */,
+				A42EA67A1F20B13D00F8838F /* UILabel+BEKit.m in Sources */,
+				A42EA67E1F20B13D00F8838F /* UIScreen+BEKit.m in Sources */,
+				A42EA6601F20B13D00F8838F /* NSData+BEKit.m in Sources */,
+				A42EA6781F20B13D00F8838F /* UIImageView+BEKit.m in Sources */,
+				A42EA6741F20B13D00F8838F /* UIDevice+BEKit.m in Sources */,
+				A42EA69A1F20B13D00F8838F /* BESystemSound.m in Sources */,
+				A42EA6661F20B13D00F8838F /* NSFileManager+BEKit.m in Sources */,
+				A42EA6961F20B13D00F8838F /* BECryptographyUtil.m in Sources */,
+				A42EA6981F20B13D00F8838F /* BELog.m in Sources */,
+				A42EA66C1F20B13D00F8838F /* NSObject+BEKit.m in Sources */,
+				A42EA6921F20B13D00F8838F /* BEView.m in Sources */,
+				A42EA68A1F20B13D00F8838F /* BEViewController.m in Sources */,
+				A42EA6881F20B13D00F8838F /* BETabBarController.m in Sources */,
+				A42EA6621F20B13D00F8838F /* NSDate+BEKit.m in Sources */,
+				A42EA68C1F20B13D00F8838F /* BEImageView.m in Sources */,
+				A42EA65E1F20B13D00F8838F /* NSArray+BEKit.m in Sources */,
+				A42EA67C1F20B13D00F8838F /* UINavigationBar+BEKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42EA5FF1F20B10800F8838F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A42EA60B1F20B10800F8838F /* BEKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -418,6 +877,21 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* BEKit_Example */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
+		};
+		A42EA6061F20B10800F8838F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A42EA5FA1F20B10700F8838F /* BEKit */;
+			targetProxy = A42EA6051F20B10800F8838F /* PBXContainerItemProxy */;
+		};
+		A42EA6081F20B10800F8838F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* BEKit_Example */;
+			targetProxy = A42EA6071F20B10800F8838F /* PBXContainerItemProxy */;
+		};
+		A42EA60F1F20B10800F8838F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A42EA5FA1F20B10700F8838F /* BEKit */;
+			targetProxy = A42EA60E1F20B10800F8838F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -532,6 +1006,7 @@
 				GCC_PREFIX_HEADER = "BEKit/BEKit-Prefix.pch";
 				INFOPLIST_FILE = "BEKit/BEKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,6 +1025,7 @@
 				GCC_PREFIX_HEADER = "BEKit/BEKit-Prefix.pch";
 				INFOPLIST_FILE = "BEKit/BEKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -602,6 +1078,118 @@
 			};
 			name = Release;
 		};
+		A42EA6121F20B10800F8838F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BEKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.css3g.iPhone.edu.om.BEKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A42EA6131F20B10800F8838F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BEKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.css3g.iPhone.edu.om.BEKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A42EA6141F20B10800F8838F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GZ8YSWMN46;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BEKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.css3g.iPhone.edu.om.BEKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BEKit_Example.app/BEKit_Example";
+			};
+			name = Debug;
+		};
+		A42EA6151F20B10800F8838F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GZ8YSWMN46;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BEKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.css3g.iPhone.edu.om.BEKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BEKit_Example.app/BEKit_Example";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -631,6 +1219,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A42EA6161F20B10800F8838F /* Build configuration list for PBXNativeTarget "BEKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A42EA6121F20B10800F8838F /* Debug */,
+				A42EA6131F20B10800F8838F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A42EA6181F20B10800F8838F /* Build configuration list for PBXNativeTarget "BEKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A42EA6141F20B10800F8838F /* Debug */,
+				A42EA6151F20B10800F8838F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

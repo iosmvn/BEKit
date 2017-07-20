@@ -1,6 +1,6 @@
 PODS:
-  - BEKit (0.5.4)
-  - Expecta (1.0.5)
+  - BEKit (0.6.1)
+  - Expecta (1.0.6)
   - Expecta+Snapshots (3.1.1):
     - Expecta (~> 1.0)
     - FBSnapshotTestCase/Core (~> 2.0)
@@ -24,12 +24,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BEKit: 44b092f9daabd0c1a16cdd5bf5b3eee5dab799bd
-  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  BEKit: fd7a80160afac58585e71382085c2ffe9e8f70af
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
   Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
 
-PODFILE CHECKSUM: d91e424efbd75093a0698508900610f2a6be481f
+PODFILE CHECKSUM: 909ed70d56a23e283ffb8f1b75bee1ef88ed995b
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

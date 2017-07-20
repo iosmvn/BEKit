@@ -38,6 +38,16 @@
                ReferencedContainer = "container:BEKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A42EA6021F20B10800F8838F"
+               BuildableName = "BEKitTests.xctest"
+               BlueprintName = "BEKitTests"
+               ReferencedContainer = "container:BEKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
