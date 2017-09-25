@@ -47,7 +47,7 @@
 }
 
 - (void)be_addObject:(id _Nullable)anObject {
-    if (![anObject be_isValid]) {
+    if ([anObject be_isValid]) {
         [self addObject:anObject];
     }
 }
