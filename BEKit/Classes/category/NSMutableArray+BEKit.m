@@ -52,6 +52,14 @@
     }
 }
 
+- (void)be_addObject:(id _Nullable)anObject nilValue:(id _Nonnull)nilValue {
+    if ([anObject be_isValid]) {
+        [self addObject:anObject];
+    } else {
+        [self addObject:nilValue];
+    }
+}
+
 - (void)be_removeObjectAtIndex:(NSUInteger)index {
     if (index < [self count]) {
         [self removeObjectAtIndex:index];

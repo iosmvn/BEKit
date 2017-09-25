@@ -21,6 +21,8 @@
 
 - (void)be_addObject:(id _Nullable)anObject;
 
+- (void)be_addObject:(id _Nullable)anObject nilValue:(id _Nonnull)nilValue;
+
 - (void)be_removeObjectAtIndex:(NSUInteger)index;
 
 @end
