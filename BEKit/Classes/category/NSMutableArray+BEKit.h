@@ -19,4 +19,8 @@
                                       array:(NSMutableArray * _Nonnull)array
                                   ascending:(BOOL)ascending;
 
+- (void)be_addObject:(id _Nullable)anObject;
+
+- (void)be_removeObjectAtIndex:(NSUInteger)index;
+
 @end

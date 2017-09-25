@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableArray+BEKit.h"
+#import "NSObject+BEKit.h"
 #import "NSArray+BEKit.h"
 
 @implementation NSMutableArray (BEKit)
@@ -43,6 +44,18 @@
     [array addObjectsFromArray:tempArray];
     
     return array;
+}
+
+- (void)be_addObject:(id _Nullable)anObject {
+    if (![anObject be_isValid]) {
+        [self addObject:anObject];
+    }
+}
+
+- (void)be_removeObjectAtIndex:(NSUInteger)index {
+    if (index < [self count]) {
+        [self removeObjectAtIndex:index];
+    }
 }
 
 @end
