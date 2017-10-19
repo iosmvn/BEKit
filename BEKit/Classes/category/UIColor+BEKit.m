@@ -7,10 +7,11 @@
 //
 
 #import "UIColor+BEKit.h"
+#import "NSObject+BEKit.h"
 
 @implementation UIColor (BEKit)
 
-+ (UIColor * _Nonnull)be_hex:(NSString *)hex {
++ (UIColor * _Nullable)be_hex:(NSString *)hex {
     NSString *colorString = [[hex stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
     CGFloat alpha, red, blue, green;
     switch ([colorString length]) {
@@ -163,7 +164,6 @@
     if (![self red:&r green:&g blue:&b alpha:&a]) {
         return NO;
     }
-    
     [UIColor red:r green:g blue:b toHue:hue saturation:saturation brightness:brightness];
     
     if (alpha)
@@ -211,7 +211,7 @@
     return YES;
 }
 
-+ (void)red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat * _Nonnull)pH saturation:(CGFloat * _Nonnull)pS brightness:(CGFloat * _Nonnull)pV {
++ (void)red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat * _Nullable)pH saturation:(CGFloat * _Nullable)pS brightness:(CGFloat * _Nullable)pV {
     CGFloat h,s,v;
     
     CGFloat max = MAX(r, MAX(g, b));

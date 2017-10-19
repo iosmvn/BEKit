@@ -99,7 +99,7 @@
 
 + (NSNumber * _Nullable)be_fileSize:(NSString * _Nonnull)fileName fromDirectory:(DirectoryType)directory {
     if (fileName.length > 0) {
-        NSString *path;
+        NSString *path = nil;
         
         switch (directory) {
             case DirectoryTypeMainBundle:
@@ -116,8 +116,8 @@
                 break;
         }
         
-        if ([[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
-            NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:fileName error:nil];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
             if (fileAttributes) {
                 return [fileAttributes objectForKey:NSFileSize];
             }

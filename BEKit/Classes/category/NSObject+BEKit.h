@@ -12,7 +12,7 @@
 
 - (BOOL)be_isValid;
 
-- (id _Nonnull)be_performSelector:(SEL _Nonnull)aSelector
+- (id _Nullable)be_performSelector:(SEL _Nonnull)aSelector
                    withObjects:(id _Nullable)object, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

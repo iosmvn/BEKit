@@ -29,10 +29,10 @@
             return nil;
         }
         
-        NSString *colorString = nil;
-        if (array.count >= 2) {
-            colorString = array[1];
-        }
+//        NSString *colorString = nil;
+//        if (array.count >= 2) {
+//            colorString = array[1];
+//        }
         
         size = [UIImage be_sizeForSizeString:sizeString];
     }
@@ -89,7 +89,7 @@
     return subImage;
 }
 
-- (UIImage * _Nonnull)be_imageByScalingProportionallyToMinimumSize:(CGSize)targetSize  {
+- (UIImage * _Nullable)be_imageByScalingProportionallyToMinimumSize:(CGSize)targetSize  {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
@@ -181,8 +181,7 @@
     return returnImage;
 }
 
-
-- (UIImage * _Nonnull)be_imageByScalingProportionallyToSize:(CGSize)targetSize {
+- (UIImage * _Nullable)be_imageByScalingProportionallyToSize:(CGSize)targetSize {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
@@ -239,7 +238,7 @@
 }
 
 
-- (UIImage * _Nonnull)be_imageByScalingToSize:(CGSize)targetSize {
+- (UIImage * _Nullable)be_imageByScalingToSize:(CGSize)targetSize {
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     

@@ -14,7 +14,7 @@
     return !(self == nil || [self isKindOfClass:[NSNull class]]);
 }
 
-- (id _Nonnull)be_performSelector:(SEL _Nonnull)aSelector withObjects:(id _Nullable)object, ... {
+- (id _Nullable)be_performSelector:(SEL _Nonnull)aSelector withObjects:(id _Nullable)object, ... {
     NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
     if (signature) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];

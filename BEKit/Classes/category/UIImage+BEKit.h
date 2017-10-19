@@ -21,13 +21,13 @@
 
 - (UIImage * _Nonnull)be_imageAtRect:(CGRect)rect;
 
-- (UIImage * _Nonnull)be_imageByScalingProportionallyToSize:(CGSize)targetSize;
+- (UIImage * _Nullable)be_imageByScalingProportionallyToSize:(CGSize)targetSize;
 
-- (UIImage * _Nonnull)be_imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
+- (UIImage * _Nullable)be_imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
 
 - (UIImage * _Nonnull)be_imageByScalingProportionallyToMaximumSize:(CGSize)targetSize;
 
-- (UIImage * _Nonnull)be_imageByScalingToSize:(CGSize)targetSize;
+- (UIImage * _Nullable)be_imageByScalingToSize:(CGSize)targetSize;
 
 - (UIImage * _Nonnull)be_imageRotatedByRadians:(CGFloat)radians;
 

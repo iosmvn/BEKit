@@ -22,7 +22,7 @@
 + (SystemSoundID)playCustomSound:(NSURL * _Nonnull)soundURL {
     SystemSoundID soundID;
     
-    OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(soundURL), &soundID);
+    OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &soundID);
     if (error != kAudioServicesNoError) {
         BELog(@"Could not load %@", soundURL);
     }

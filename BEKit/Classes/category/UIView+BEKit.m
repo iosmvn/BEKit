@@ -230,7 +230,7 @@
 }
 
 - (void)be_translateAroundTheView:(UIView * _Nonnull)topView duration:(CGFloat)duration direction:(UIViewAnimationTranslationDirection)direction repeat:(BOOL)repeat startFromEdge:(BOOL)startFromEdge {
-    CGFloat startPosition = self.center.x, endPosition;
+    CGFloat startPosition, endPosition;
     switch (direction) {
         case UIViewAnimationTranslationDirectionFromLeftToRight: {
             startPosition = self.frame.size.width / 2;

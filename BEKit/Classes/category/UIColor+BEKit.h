@@ -34,7 +34,7 @@
  @param hex HEX string
  @return Returns the UIColor instance
  */
-+ (UIColor * _Nonnull)be_hex:(NSString * _Nonnull)hex;
++ (UIColor * _Nullable)be_hex:(NSString * _Nonnull)hex;
 
 + (UIColor * _Nonnull)be_colorWithHex:(unsigned int)hex;
 + (UIColor * _Nonnull)be_colorWithHex:(unsigned int)hex alpha:(float)alpha;

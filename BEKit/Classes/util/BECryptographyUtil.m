@@ -85,7 +85,10 @@ done:
 }
 
 + (NSString * _Nullable)be_fileMD5:(NSString * _Nonnull)filePath chunkSize:(size_t)chunkSize {
-    return (__bridge NSString *)(FileMD5HashCreateWithPath((__bridge CFStringRef)filePath, chunkSize));
+    CFStringRef strRef = FileMD5HashCreateWithPath((__bridge CFStringRef)filePath, chunkSize);
+    NSString *md5 =  (__bridge NSString *)strRef;
+    CFRelease(strRef);
+    return md5;
 }
 
 + (NSString * _Nullable)be_SHA1:(NSString * _Nonnull)string {
