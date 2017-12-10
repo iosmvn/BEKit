@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BEKit'
-  s.version          = "0.6.6"
+  s.version          = "0.7.0"
   s.summary          = "BEKit是基础扩展工具包（Base Extended Kit）核心代码."
 
 # This description is used to generate tags and improve search results.
