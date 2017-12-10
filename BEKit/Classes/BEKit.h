@@ -60,6 +60,10 @@
 #define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
 
 //单例化一个类
+#define BE_SINGLETON_FOR_HEADER(classname)\
+\
++(className *)shared##classname;
+
 #define BE_SINGLETON_FOR_CLASS(classname) \
 \
 static classname *shared##classname = nil; \
