@@ -24,8 +24,8 @@ static BOOL(*be_bool_msgSend)(id, SEL, id _Nullable, ...) = (BOOL (*)(id, SEL, i
         BOOL         |         NSNumber
        other         |         NSValue
  */
-id _Nullable be_objc_msgSend_0(id target, NSString *selectorName);
-id _Nullable be_objc_msgSend_1(id target, NSString *selectorName, id _Nullable object);
-id _Nullable be_objc_msgSend_2(id target, NSString *selectorName, id _Nullable object1, id _Nullable object2);
+id _Nullable be_objc_msgSend_0(id target, SEL selector);
+id _Nullable be_objc_msgSend_1(id target, SEL selector, id _Nullable object);
+id _Nullable be_objc_msgSend_2(id target, SEL selector, id _Nullable object1, id _Nullable object2);
 
 NS_ASSUME_NONNULL_END

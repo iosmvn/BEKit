@@ -11,6 +11,7 @@
 #endif
 
 #import "BEKit.h"
+#import "BEObjcMsgSend.h"
 #import "NSArray+BEKit.h"
 #import "NSData+BEKit.h"
 #import "NSDate+BEKit.h"

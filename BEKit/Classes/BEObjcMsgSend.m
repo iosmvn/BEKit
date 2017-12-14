@@ -8,23 +8,22 @@
 #import "BEObjcMsgSend.h"
 #import "BELog.h"
 
-id be_objc_msgSend_0(id target, NSString *selectorName){
-    return be_objc_msgSend_2(target, selectorName, nil, nil);
+id be_objc_msgSend_0(id target, SEL selector){
+    return be_objc_msgSend_2(target, selector, nil, nil);
 }
 
-id be_objc_msgSend_1(id target, NSString *selectorName, id object){
-    return be_objc_msgSend_2(target, selectorName, object, nil);
+id be_objc_msgSend_1(id target, SEL selector, id object){
+    return be_objc_msgSend_2(target, selector, object, nil);
 }
 
-id be_objc_msgSend_2(id target, NSString *selectorName, id object1, id object2){
+id be_objc_msgSend_2(id target, SEL selector, id object1, id object2){
     if (target == nil) {
         BELog(@"ERROR: Target should not be nil");
         return nil;
     }
-    SEL selector = NSSelectorFromString(selectorName);
     NSMethodSignature *signature = [target methodSignatureForSelector:selector];
     if (signature == nil) {
-        BELog(@"ERROR: %@ can't call '%@'.", target, selectorName);
+        BELog(@"ERROR: %@ can't call '%@'.", target, NSStringFromSelector(selector));
         return nil;
     }
     
