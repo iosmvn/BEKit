@@ -7,7 +7,7 @@
 //
 
 #import "NSDate+BEKit.h"
-#import "BEConfigUtil.h"
+#import "BEKit.h"
 
 @implementation NSDate (BEKit)
 

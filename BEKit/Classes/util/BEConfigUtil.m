@@ -7,6 +7,7 @@
 //
 
 #import "BEConfigUtil.h"
+#import "BEKit.h"
 
 @implementation BEConfigUtil
 

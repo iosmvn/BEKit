@@ -7,7 +7,7 @@
 //
 
 #import "NSFileManager+BEKit.h"
-#import "BEConfigUtil.h"
+#import "BEKit.h"
 
 @implementation NSFileManager (BEKit)
 
