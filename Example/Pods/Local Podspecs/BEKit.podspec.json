@@ -1,6 +1,6 @@
 {
   "name": "BEKit",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "summary": "BEKit是基础扩展工具包（Base Extended Kit）核心代码.",
   "description": "BEKit（Base Extended Kit）是一些基础功能代码、工具类、基类的集合，旨在快速实现基础功能。",
   "homepage": "http://iospai.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/iosmvn/BEKit.git",
-    "tag": "0.7.0"
+    "tag": "0.8.0"
   },
   "platforms": {
     "ios": "8.0"

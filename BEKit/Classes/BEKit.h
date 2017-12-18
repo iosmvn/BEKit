@@ -50,12 +50,33 @@
 
 #import "BEObjcMsgSend.h"
 
-#define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
-#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-#define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+/**
+ *  Get App name
+ */
+#define BE_APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 
-#define BFLocalizedString(key, comment) \
+/**
+ *  Get App build
+ */
+#define BE_APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+/**
+ *  Get App version
+ */
+#define BE_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+/**
+ *  Get App Bundle id
+ */
+#define BE_APP_BundleId [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]
+
+/**
+ *  Use BELocalizedString to use the string translated by BEKit
+ */
+#define BELocalizedString(key, comment) \
 [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BEKit"]
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 //G－C－D
 #define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)

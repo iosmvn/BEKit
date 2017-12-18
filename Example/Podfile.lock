@@ -1,5 +1,5 @@
 PODS:
-  - BEKit (0.7.0)
+  - BEKit (0.8.0)
   - Expecta (1.0.6)
   - Expecta+Snapshots (3.1.1):
     - Expecta (~> 1.0)
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BEKit: 588a76b24c6336dab8e66d66f9fd96d3b13a7d0c
+  BEKit: 6105b7ab2436804162b5dcd615670083a999515d
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
