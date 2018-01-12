@@ -16,6 +16,7 @@
 #define BE_IS_IPHONE_6 [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH == 667.0
 #define BE_IS_IPHONE_6P [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH == 736.0
 #define BE_IS_IPAD [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && BE_SCREEN_MAX_LENGTH == 1024.0
+#define BE_IS_IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125,2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 @interface UIScreen (BEKit)
 
