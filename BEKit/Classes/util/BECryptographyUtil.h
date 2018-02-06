@@ -16,11 +16,16 @@
 @interface BECryptographyUtil : NSObject
 
 /**
- *  Create a MD5 string
- *
- *  @param string The string to be converted
- *
- *  @return Returns the MD5 NSString
+ 计算MD5散列结果
+ 
+ 终端测试命令
+ @code
+ md5 -s "string"
+ @endcode
+ 
+ <p>提示：随着MD5碰撞生成器的出现，MD5算法不应被用于任何软件完整性检查或者代码签名的用途。</p>
+ 
+ @return 32个字符的MD5散列字符串
  */
 + (NSString * _Nullable)be_MD5:(NSString * _Nonnull)string;
 
@@ -29,31 +34,65 @@
 
 
 /**
- *  Create a SHA1 string
- *
- *  @param string The string to be converted
- *
- *  @return Returns the SHA1 NSString
+ 计算SHA1散列结果
+ 
+ 终端测试命令
+ @code
+ echo -n "string" | openssl sha -sha1
+ @endcode
+ 
+ @return 40个字符的SHA1散列字符串
  */
 + (NSString * _Nullable)be_SHA1:(NSString * _Nonnull)string;
 
 /**
- *  Create a SHA256 string
- *
- *  @param string The string to be converted
- *
- *  @return Returns the SHA256 NSString
+ 计算SHA256散列结果
+ 
+ 终端测试命令
+ @code
+ echo -n "string" | openssl sha -sha256
+ @endcode
+ 
+ @return 64个字符的SHA256散列字符串
  */
 + (NSString * _Nullable)be_SHA256:(NSString * _Nonnull)string;
 
 /**
- *  Create a SHA512 string
- *
- *  @param string The string to be converted
- *
- *  @return Returns the SHA512 NSString
+ 计算SHA512散列结果
+ 
+ 终端测试命令
+ @code
+ echo -n "string" | openssl sha -sha512
+ @endcode
+ 
+ @return 64个字符的SHA512散列字符串
  */
 + (NSString * _Nullable)be_SHA512:(NSString * _Nonnull)string;
+
+/**
+ HMAC散列函数-MD5
+ */
++ (NSString * _Nullable)be_HmacMD5:(NSString * _Nonnull)string key:(NSString * _Nonnull)key;
+
+/**
+ HMAC散列函数-SHA1
+ */
++ (NSString * _Nullable)be_HmacSHA1:(NSString * _Nonnull)string key:(NSString * _Nonnull)key;
+
+/**
+ HMAC散列函数-SHA256
+ */
++ (NSString * _Nullable)be_HmacSHA256:(NSString * _Nonnull)string key:(NSString * _Nonnull)key;
+
+/**
+ HMAC散列函数-SHA512
+ */
++ (NSString * _Nullable)be_HmacSHA512:(NSString * _Nonnull)string key:(NSString * _Nonnull)key;
+
+/**
+ HMAC散列函数-SHA384
+ */
++ (NSString * _Nullable)be_HmacSHA384:(NSString * _Nonnull)string key:(NSString * _Nonnull)key;
 
 /**
  *  Encrypt NSData in AES128

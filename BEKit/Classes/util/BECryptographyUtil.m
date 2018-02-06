@@ -70,18 +70,12 @@ done:
 
 @implementation BECryptographyUtil
 
+#pragma mark - 散列函数
 + (NSString * _Nullable)be_MD5:(NSString * _Nonnull)string {
-    if (string == nil || [string length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
-    CC_MD5([string UTF8String], (int)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-    NSMutableString *ms = [NSMutableString string];
-    for (i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-        [ms appendFormat: @"%02x", (int)(digest[i])];
-    }
-    return [ms copy];
+    const char *strData = [string UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(strData, (CC_LONG)strlen(strData), digest);
+    return [self be_stringFromBytes:digest length:CC_MD5_DIGEST_LENGTH];
 }
 
 + (NSString * _Nullable)be_fileMD5:(NSString * _Nonnull)filePath chunkSize:(size_t)chunkSize {
@@ -92,47 +86,170 @@ done:
 }
 
 + (NSString * _Nullable)be_SHA1:(NSString * _Nonnull)string {
-    if (string == nil || [string length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_SHA1_DIGEST_LENGTH], i;
-    CC_SHA1([string UTF8String], (int)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-    NSMutableString *ms = [NSMutableString string];
-    for (i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
-        [ms appendFormat: @"%02x", (int)(digest[i])];
-    }
-    return [ms copy];
+    const char *strData = [string UTF8String];
+    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(strData, (CC_LONG)strlen(strData), digest);
+    return [self be_stringFromBytes:digest length:CC_SHA1_DIGEST_LENGTH];
 }
 
 + (NSString * _Nullable)be_SHA256:(NSString * _Nonnull)string {
-    if (string == nil || [string length] == 0) {
-        return nil;
-    }
-    
-    unsigned char digest[CC_SHA256_DIGEST_LENGTH], i;
-    CC_SHA256([string UTF8String], (int)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-    NSMutableString *ms = [NSMutableString string];
-    for (i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
-        [ms appendFormat: @"%02x", (int)(digest[i])];
-    }
-    return [ms copy];
+    const char *strData = [string UTF8String];
+    unsigned char digest[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(strData, (CC_LONG)strlen(strData), digest);
+    return [self be_stringFromBytes:digest length:CC_SHA256_DIGEST_LENGTH];
 }
 
 + (NSString * _Nullable)be_SHA512:(NSString * _Nonnull)string {
-    if (string == nil || [string length] == 0) {
+    const char *strData = [string UTF8String];
+    unsigned char digest[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(strData, (CC_LONG)strlen(strData), digest);
+    return [self be_stringFromBytes:digest length:CC_SHA512_DIGEST_LENGTH];
+}
+
++ (NSString * _Nullable)be_HmacMD5:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    return [self be_Hmac:kCCHmacAlgMD5 string:string key:key];
+}
+
++ (NSString * _Nullable)be_HmacSHA1:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    return [self be_Hmac:kCCHmacAlgSHA1 string:string key:key];
+}
+
++ (NSString * _Nullable)be_HmacSHA256:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    return [self be_Hmac:kCCHmacAlgSHA256 string:string key:key];
+}
+
++ (NSString * _Nullable)be_HmacSHA512:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    return [self be_Hmac:kCCHmacAlgSHA512 string:string key:key];
+}
+
++ (NSString * _Nullable)be_HmacSHA384:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    return [self be_Hmac:kCCHmacAlgSHA384 string:string key:key];
+}
+
+#pragma mark - Private
+
++ (NSString * _Nullable)be_Hmac:(CCHmacAlgorithm)algorithm string:(NSString * _Nonnull)string key:(NSString * _Nonnull)key {
+    int digestLength = -1;
+    switch (algorithm) {
+        case kCCHmacAlgMD5:
+        {
+            digestLength = CC_MD5_DIGEST_LENGTH;
+        }
+            break;
+        case kCCHmacAlgSHA1:
+        {
+            digestLength = CC_SHA1_DIGEST_LENGTH;
+        }
+            break;
+        case kCCHmacAlgSHA256:
+        {
+            digestLength = CC_SHA256_DIGEST_LENGTH;
+        }
+            break;
+        case kCCHmacAlgSHA512:
+        {
+            digestLength = CC_SHA512_DIGEST_LENGTH;
+        }
+            break;
+        case kCCHmacAlgSHA384:
+        {
+            digestLength = CC_SHA384_DIGEST_LENGTH;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    if (digestLength = -1) {
         return nil;
     }
-    
-    unsigned char digest[CC_SHA512_DIGEST_LENGTH], i;
-    CC_SHA512([string UTF8String], (int)[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding], digest);
-    NSMutableString *ms = [NSMutableString string];
-    for (i = 0; i < CC_SHA512_DIGEST_LENGTH; i++)
-    {
-        [ms appendFormat: @"%02x", (int)(digest[i])];
-    }
-    return [ms copy];
+    const char *keyData = [key UTF8String];
+    const char *strData = [string UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
+    CCHmac(algorithm, keyData, (size_t)strlen(keyData), strData, (size_t)strlen(strData), digest);
+    return [self be_stringFromBytes:digest length:digestLength];
 }
+
+#pragma mark - Helpers
+
+/**
+ 返回二进制 Bytes 流的字符串表现形式
+ 
+ @param bytes 二进制 Bytes 数组
+ @param length 数组长度
+ @return 字符串表现形式
+ */
++ (NSString * _Nullable)be_stringFromBytes:(unsigned char *)bytes length:(NSUInteger)length
+{
+    NSMutableString *mutableString = @"".mutableCopy;
+    for (NSUInteger i = 0; i < length; i++)
+        [mutableString appendFormat:@"%02x", bytes[i]];
+    return [NSString stringWithString:mutableString];
+}
+
+////echo -n hello | openssl enc -aes-128-ecb -K 616263 -nosalt | base64
+//- (NSString * _Nullable)be_encrypt:(CCHmacAlgorithm)algorithm string:(NSString * _Nonnull)string key:(NSString * _Nonnull)key iv:(NSData * _Nullable)iv {
+//    int keyLength = -1;
+//    int blockLength = -1;
+//    switch (algorithm) {
+//        case kCCAlgorithmAES128:
+//        {
+//            keyLength = kCCKeySizeAES128;
+//            blockLength = kCCBlockSizeAES128;
+//        }
+//            break;
+//        case kCCAlgorithmDES:
+//        {
+//            keyLength = kCCKeySizeDES;
+//            blockLength = kCCBlockSizeDES;
+//        }
+//            break;
+//
+//        default:
+//            break;
+//    }
+//    // 设置密钥
+//    NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
+//    uint8_t cKey[keyLength];
+//    bzero(cKey, sizeof(cKey));
+//    [keyData getBytes:cKey length:keyLength];
+//    //设置iv
+//    uint8_t cIV[blockLength];
+//    bzero(cIV, sizeof(cIV));
+//    CCOptions options = 0;
+//    if (iv) {
+//        [iv getBytes:cIV length:blockLength];
+//        option = kCCOptionPKCS7Padding;
+//    } else {
+//        option = kCCOptionPKCS7Padding | kCCOptionECBMode;
+//    }
+//    // 设置输出缓冲区
+//    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+//    size_t bufferSize = [data length] + blockLength;
+//    void *buffer = malloc(bufferSize);
+//    // 开始加密
+//    size_t encryptedLength = 0;
+//    CCCryptorStatus status = CCCrypt(kCCEncrypt,
+//                                     algorithm,
+//                                     option,
+//                                     [keyData bytes],
+//                                     [keyData length],
+//                                     cIV,
+//                                     [data bytes],
+//                                     [data length],
+//                                     buffer,
+//                                     bufferSize,
+//                                     encryptedLength)
+//    NSData *result = nil;
+//    if (status == kCCSuccess) {
+//        result = [NSData dataWithBytesNoCopy:buffer length:encryptedLength];
+//    } else {
+//        free(buffer);
+//        NSLog(@"[错误]加密失败|状态编码：%d", status);
+//    }
+//    return [result base64EncodedStringWithOptions:0];
+//}
+
 
 + (NSData * _Nullable)be_AES128EncryptData:(NSData * _Nonnull)data withKey:(NSString * _Nonnull)key {
     char keyPtr[kCCKeySizeAES128+1];
