@@ -160,12 +160,12 @@ done:
         default:
             break;
     }
-    if (digestLength = -1) {
+    if (digestLength == -1) {
         return nil;
     }
     const char *keyData = [key UTF8String];
     const char *strData = [string UTF8String];
-    unsigned char digest[CC_MD5_DIGEST_LENGTH], i;
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
     CCHmac(algorithm, keyData, (size_t)strlen(keyData), strData, (size_t)strlen(strData), digest);
     return [self be_stringFromBytes:digest length:digestLength];
 }
