@@ -32,6 +32,7 @@
 #import "NSObject+BEKit.h"
 #import "NSString+BEKit.h"
 #import "NSThread+BEKit.h"
+#import "UIButton+BEKit.h"
 #import "UIColor+BEKit.h"
 #import "UIDevice+BEKit.h"
 #import "UIImage+BEKit.h"
