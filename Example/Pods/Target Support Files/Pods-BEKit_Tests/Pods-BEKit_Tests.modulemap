@@ -1,6 +1,0 @@
-framework module Pods_BEKit_Tests {
-  umbrella header "Pods-BEKit_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
