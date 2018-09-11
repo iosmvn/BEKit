@@ -34,16 +34,23 @@
  }
  */
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
+#pragma mark -
+#pragma mark - 状态栏控制
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
 
-#pragma mark - Orientations
-- (BOOL)shouldAutorotate{
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationNone;
+}
+
+#pragma mark -
+#pragma mark - 旋转控制
+- (BOOL)shouldAutorotate {
     return NO;
     //    return UIInterfaceOrientationIsLandscape(self.interfaceOrientation);
 }
@@ -60,6 +67,8 @@
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:interfaceOrientation] forKey:@"orientation"];
 }
 
+#pragma mark -
+#pragma mark - 其他
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     NSArray *ctrs = self.navigationController.viewControllers;
     UIViewController *lastCtr = (UIViewController *)ctrs.lastObject;

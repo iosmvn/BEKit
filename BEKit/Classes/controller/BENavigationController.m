@@ -10,6 +10,22 @@
 
 @implementation BENavigationController
 
+#pragma mark -
+#pragma mark - 状态栏控制
+- (BOOL)prefersStatusBarHidden {
+    return self.topViewController.prefersStatusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.topViewController.preferredStatusBarStyle;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return self.topViewController.preferredStatusBarUpdateAnimation;
+}
+
+#pragma mark -
+#pragma mark - 旋转控制
 - (BOOL)shouldAutorotate{
     return [self.visibleViewController shouldAutorotate];
 }
@@ -26,11 +42,8 @@
     }
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle {
-    //    return UIStatusBarStyleLightContent;
-    return self.topViewController.preferredStatusBarStyle;
-}
-
+#pragma mark -
+#pragma mark - 其他
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
