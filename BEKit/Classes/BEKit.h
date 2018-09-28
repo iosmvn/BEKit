@@ -42,6 +42,7 @@
 #import "UIScreen+BEKit.h"
 #import "UIToolbar+BEKit.h"
 #import "UIView+BEKit.h"
+#import "UITableView+BEKit.h"
 
 //ui
 #import "BEView.h"
