@@ -84,45 +84,44 @@
 #define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
 #define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
 
-//单例化一个类
-#define BE_SINGLETON_FOR_HEADER(classname)\
-\
-+(className *)shared##classname;
+#if __has_feature(objc_arc) // ARC
 
-#define BE_SINGLETON_FOR_CLASS(classname) \
+#else // 非ARC
+
+#endif
+
+//单例化一个类
+#define BE_SINGLETON_FOR_H(classname) + (instancetype)shared##classname;
+#define BE_SINGLETON_FOR_M(classname) \
 \
-static classname *shared##classname = nil; \
+static id _instance = nil; \
 \
-+ (classname *)shared##classname \
++ (instancetype)shared##classname \
 { \
-@synchronized(self) \
-{ \
-if (shared##classname == nil) \
-{ \
-shared##classname = [[self alloc] init]; \
-} \
-} \
-\
-return shared##classname; \
-} \
-\
-+ (id)allocWithZone:(NSZone *)zone \
-{ \
-@synchronized(self) \
-{ \
-if (shared##classname == nil) \
-{ \
-shared##classname = [super allocWithZone:zone]; \
-return shared##classname; \
-} \
+    static dispatch_once_t onceToken; \
+    dispatch_once(&onceToken, ^{ \
+        _instance = [[self alloc] init]; \
+    }); \
+    return _instance; \
 } \
 \
-return nil; \
++ (instancetype)allocWithZone:(struct _NSZone *)zone \
+{ \
+    static dispatch_once_t onceToken; \
+    dispatch_once(&onceToken, ^{ \
+        _instance = [super allocWithZone:zone]; \
+    }); \
+    return _instance; \
 } \
 \
 - (id)copyWithZone:(NSZone *)zone \
 { \
-return self; \
+return _instance; \
+}\
+\
+- (id)mutableCopyWithZone:(NSZone *)zone \
+{ \
+    return _instance; \
 }
 
 #endif /* BEKit_h */
