@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define BE_SCREEN_WIDTH [[UIScreen mainScreen] fixedScreenSize].width
-#define BE_SCREEN_HEIGHT [[UIScreen mainScreen] fixedScreenSize].height
+#define BE_SCREEN_WIDTH [[UIScreen mainScreen] be_fixedScreenSize].width
+#define BE_SCREEN_HEIGHT [[UIScreen mainScreen] be_fixedScreenSize].height
 
 #define BE_IS_IPHONE_4_OR_LESS [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH < 568.0
 #define BE_IS_IPHONE_5 [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && BE_SCREEN_MAX_LENGTH == 568.0
