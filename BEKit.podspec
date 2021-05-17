@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BEKit'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'BEKit是基础扩展工具包（Base Extended Kit）核心代码.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'BEKit/Classes/**/*'
-  
+
   # s.resource_bundles = {
   #   'BEKit' => ['BEKit/Assets/*.png']
   # }

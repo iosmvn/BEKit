@@ -4,13 +4,13 @@ use_frameworks!
 
 target 'BEKit_Example' do
     pod 'BEKit', :path => '../'
-    
+
     target 'BEKit_Tests' do
         inherit! :search_paths
-        
+
         pod 'Specta'
         pod 'Expecta'
-        pod 'FBSnapshotTestCase'
+        # pod 'FBSnapshotTestCase'
         pod 'Expecta+Snapshots'
     end
 end

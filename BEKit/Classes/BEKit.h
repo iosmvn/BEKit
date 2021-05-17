@@ -6,51 +6,58 @@
 //
 //
 
-#ifndef BEKit_h
-#define BEKit_h
+#import <Foundation/Foundation.h>
+
+//! Project version number for BEKit.
+FOUNDATION_EXPORT double BEKitVersionNumber;
+
+//! Project version string for BEKit.
+FOUNDATION_EXPORT const unsigned char BEKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <BEKit/PublicHeader.h>
 
 //controller
-#import "BEAppDelegate.h"
-#import "BEViewController.h"
-#import "BETabBarController.h"
-#import "BENavigationController.h"
+#import <BEKit/BEAppDelegate.h>
+#import <BEKit/BEViewController.h>
+#import <BEKit/BETabBarController.h>
+#import <BEKit/BENavigationController.h>
 
 //util
-#import "BELog.h"
-#import "BEConfigUtil.h"
-#import "BESystemSound.h"
-#import "BECryptographyUtil.h"
+#import <BEKit/BELog.h>
+#import <BEKit/BEConfigUtil.h>
+#import <BEKit/BESystemSound.h>
+#import <BEKit/BECryptographyUtil.h>
 
 //category
-#import "NSArray+BEKit.h"
-#import "NSData+BEKit.h"
-#import "NSDate+BEKit.h"
-#import "NSDictionary+BEKit.h"
-#import "NSFileManager+BEKit.h"
-#import "NSMutableArray+BEKit.h"
-#import "NSNumber+BEKit.h"
-#import "NSObject+BEKit.h"
-#import "NSString+BEKit.h"
-#import "NSThread+BEKit.h"
-#import "UIButton+BEKit.h"
-#import "UIColor+BEKit.h"
-#import "UIDevice+BEKit.h"
-#import "UIImage+BEKit.h"
-#import "UIImageView+BEKit.h"
-#import "UILabel+BEKit.h"
-#import "UINavigationBar+BEKit.h"
-#import "UIScreen+BEKit.h"
-#import "UIToolbar+BEKit.h"
-#import "UIView+BEKit.h"
-#import "UITableView+BEKit.h"
+#import <BEKit/NSArray+BEKit.h>
+#import <BEKit/NSData+BEKit.h>
+#import <BEKit/NSDate+BEKit.h>
+#import <BEKit/NSDictionary+BEKit.h>
+#import <BEKit/NSFileManager+BEKit.h>
+#import <BEKit/NSMutableArray+BEKit.h>
+#import <BEKit/NSNumber+BEKit.h>
+#import <BEKit/NSObject+BEKit.h>
+#import <BEKit/NSString+BEKit.h>
+#import <BEKit/NSThread+BEKit.h>
+#import <BEKit/UIButton+BEKit.h>
+#import <BEKit/UIColor+BEKit.h>
+#import <BEKit/UIDevice+BEKit.h>
+#import <BEKit/UIImage+BEKit.h>
+#import <BEKit/UIImageView+BEKit.h>
+#import <BEKit/UILabel+BEKit.h>
+#import <BEKit/UINavigationBar+BEKit.h>
+#import <BEKit/UIScreen+BEKit.h>
+#import <BEKit/UIToolbar+BEKit.h>
+#import <BEKit/UIView+BEKit.h>
+#import <BEKit/UITableView+BEKit.h>
 
 //ui
-#import "BEView.h"
-#import "BETextField.h"
-#import "BEImageView.h"
-#import "BETableViewCell.h"
+#import <BEKit/BEView.h>
+#import <BEKit/BETextField.h>
+#import <BEKit/BEImageView.h>
+#import <BEKit/BETableViewCell.h>
 
-#import "BEObjcMsgSend.h"
+#import <BEKit/BEObjcMsgSend.h>
 
 /**
  *  Get App name
@@ -123,5 +130,3 @@ return _instance; \
 { \
     return _instance; \
 }
-
-#endif /* BEKit_h */

@@ -30,6 +30,7 @@
 #import "UILabel+BEKit.h"
 #import "UINavigationBar+BEKit.h"
 #import "UIScreen+BEKit.h"
+#import "UITableView+BEKit.h"
 #import "UIToolbar+BEKit.h"
 #import "UIView+BEKit.h"
 #import "BEAppDelegate.h"
