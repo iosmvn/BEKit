@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BEKit'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'BEKit是基础扩展工具包（Base Extended Kit）核心代码.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,13 @@ Pod::Spec.new do |s|
   #   'BEKit' => ['BEKit/Assets/*.png']
   # }
 
+  s.user_target_xcconfig = {
+      'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+  }
+  s.pod_target_xcconfig = {
+      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+  }
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.frameworks = 'Accelerate', 'AudioToolbox'
