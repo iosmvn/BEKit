@@ -2,7 +2,7 @@
 //  UIButton+BEKit.h
 //  BEKit
 //
-//  Created by sundanlong on 2018/2/27.
+//  Created by dalong on 2018/2/27.
 //
 
 #import <UIKit/UIKit.h>

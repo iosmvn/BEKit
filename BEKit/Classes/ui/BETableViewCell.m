@@ -2,7 +2,7 @@
 //  BETableViewCell.m
 //  Pods
 //
-//  Created by sundanlong on 16/4/12.
+//  Created by dalong on 16/4/12.
 //
 //
 

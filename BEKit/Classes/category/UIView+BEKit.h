@@ -2,7 +2,7 @@
 //  UIView+BEKit.h
 //  BEKit
 //
-//  Created by sundanlong on 16/4/11.
+//  Created by dalong on 16/4/11.
 //
 //
 

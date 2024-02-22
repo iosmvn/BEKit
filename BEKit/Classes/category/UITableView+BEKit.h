@@ -2,7 +2,7 @@
 //  UITableView+BEKit.h
 //  BEKit
 //
-//  Created by sundanlong on 2018/9/29.
+//  Created by dalong on 2018/9/29.
 //
 
 #import <UIKit/UIKit.h>
